@@ -706,6 +706,18 @@ header .header_margin {
   background-color: var(--color-primary);
 }
 
+.sticky-left-nav ul li.nav-active-contact:hover a span {
+  width: 5.6rem;
+  opacity: 1;
+  background-color: var(--color-primary);
+}
+
+.sticky-left-nav ul li.selected-nav-contact a span {
+  width: 5.6rem;
+  opacity: 1;
+  background-color: var(--color-primary);
+}
+
 .side-menu {
   z-index: 2000;
 }
@@ -1995,6 +2007,16 @@ header .header_margin {
     transform: scale(0.8);
     cursor: pointer;
   }
+}
+
+/* contact slide */
+.contact_details {
+  font-style: normal;
+}
+
+.contact_link {
+  color: inherit;
+  text-decoration: underline;
 }
 
 /*404 button*/

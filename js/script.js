@@ -57,7 +57,7 @@ if (track) {
 
     // Section keys, in slide order. They match the nav-active-<key> and
     // selected-nav-<key> classes used by the side menu and hamburger menu.
-    const sections = ["ma", "design", "dev", "app", "digimarket", "price", "about"];
+    const sections = ["ma", "design", "dev", "app", "digimarket", "price", "about", "contact"];
     const sideMenuItems = Array.from(document.querySelectorAll(".sticky-left-nav .nav-active"));
     const hamburgerLinks = Array.from(document.querySelectorAll(".menu .menu-nav"));
     const menuToggle = document.getElementById("toggle-checkbox");
