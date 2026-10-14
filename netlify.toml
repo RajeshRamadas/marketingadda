@@ -1,17 +1,8 @@
-# Netlify ignores .htaccess, so the canonical-host redirect and headers live here.
-
-# Send the bare domain to the canonical https://www host (matches the canonical URL and sitemap).
-[[redirects]]
-  from = "http://marketingadda.com/*"
-  to = "https://www.marketingadda.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://marketingadda.com/*"
-  to = "https://www.marketingadda.com/:splat"
-  status = 301
-  force = true
+# Response headers for Netlify. (Netlify ignores .htaccess.)
+#
+# No host redirect here on purpose: a forced marketingadda.com -> www rule
+# loops with Netlify's own primary-domain redirect when the bare domain is
+# primary. Set the canonical host in the hosting dashboard instead.
 
 [[headers]]
   for = "/*"
