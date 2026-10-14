@@ -20,6 +20,7 @@ div,
 span,
 h1,
 h2,
+h3,
 p,
 a,
 center,
@@ -76,22 +77,28 @@ p {
   font-weight: 700;
 }
 
+/* Only the first slide uses an <h1>; the other slide headlines are <h2>
+   and subheadlines <h3>, so the classes carry the heading styles. */
 h1,
-h2 {
+h2,
+.c-hero__headline,
+.c-hero__subheadline {
   margin: 3rem 0 1.38rem;
   font-family: "Prompt", Arial, helvetica neue, Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1;
 }
 
-h1 {
+h1,
+.c-hero__headline {
   margin-top: 0;
   font-size: 6.209rem;
   font-family: "Play", Arial, helvetica neue, Helvetica, sans-serif;
   font-weight: 700;
 }
 
-h2 {
+h2,
+.c-hero__subheadline {
   font-size: 2.157rem;
 }
 

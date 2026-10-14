@@ -1,0 +1,44 @@
+# Netlify ignores .htaccess, so the canonical-host redirect and headers live here.
+
+# Send the bare domain to the canonical https://www host (matches the canonical URL and sitemap).
+[[redirects]]
+  from = "http://marketingadda.com/*"
+  to = "https://www.marketingadda.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://marketingadda.com/*"
+  to = "https://www.marketingadda.com/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+# Images and icons rarely change; let browsers keep them for 30 days.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# CSS and JS filenames are not versioned, so cache them briefly and revalidate.
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+# Keep the 404 page out of search results (it also has a noindex meta tag).
+[[headers]]
+  for = "/404.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
