@@ -634,18 +634,6 @@ header .header_margin {
   background-color: var(--color-primary);
 }
 
-.sticky-left-nav ul li.nav-active-price:hover a span {
-  width: 3.75rem;
-  opacity: 1;
-  background-color: var(--color-primary);
-}
-
-.sticky-left-nav ul li.selected-nav-price a span {
-  width: 3.75rem;
-  opacity: 1;
-  background-color: var(--color-primary);
-}
-
 .sticky-left-nav ul li.nav-active-about:hover a span {
   width: 4.6rem;
   opacity: 1;
@@ -659,13 +647,13 @@ header .header_margin {
 }
 
 .sticky-left-nav ul li.nav-active-app:hover a span {
-  width: 5.9rem;
+  width: 8.4rem;
   opacity: 1;
   background-color: var(--color-primary);
 }
 
 .sticky-left-nav ul li.selected-nav-app a span {
-  width: 5.9rem;
+  width: 8.4rem;
   opacity: 1;
   background-color: var(--color-primary);
 }
