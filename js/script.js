@@ -79,7 +79,42 @@ if (track) {
         if (nextButton) nextButton.classList.toggle("is-hidden", targetIndex === slides.length - 1);
 
         currentIndex = targetIndex;
+
+        // Keep the address bar in step so each section can be linked and shared.
+        if (window.history && history.replaceState) {
+            const url = targetIndex === 0 ? location.pathname + location.search : "#" + targetSlide.id;
+            history.replaceState(null, "", url);
+        }
     };
+
+    // Open the slide named in the URL (for example /#digital-marketing).
+    const slideFromHash = () => {
+        const id = decodeURIComponent(location.hash.slice(1));
+        return id ? slides.findIndex((slide) => slide.id === id) : -1;
+    };
+
+    const container = track.parentElement;
+    const resetContainerScroll = () => {
+        // A fragment jump can scroll the clipped container; the track transform does the positioning.
+        if (container) container.scrollLeft = 0;
+        window.scrollTo(0, 0);
+    };
+
+    const initialIndex = slideFromHash();
+    if (initialIndex > 0) {
+        track.style.transition = "none";
+        goToSlide(initialIndex);
+        track.offsetHeight;
+        track.style.transition = "";
+    }
+    resetContainerScroll();
+    window.addEventListener("load", resetContainerScroll);
+
+    window.addEventListener("hashchange", () => {
+        const index = slideFromHash();
+        if (index >= 0) goToSlide(index);
+        resetContainerScroll();
+    });
 
     if (nextButton) nextButton.addEventListener("click", () => goToSlide(currentIndex + 1));
     if (prevButton) prevButton.addEventListener("click", () => goToSlide(currentIndex - 1));
