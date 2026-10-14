@@ -1,9 +1,9 @@
 {"name":"MarketingAdda",
 "short_name":"MarketingAdda",
-"start_url":"/index.html",
-"description": "Delivering digital transformation.",
+"start_url":"/",
+"description": "UI/UX design, AI applications, automation and digital marketing.",
 "orientation": "portrait-primary",
-"theme_color":"#ffffff",
+"theme_color":"#012b4d",
 "background_color":"#ffffff",
 "display":"standalone",
 "icons":[

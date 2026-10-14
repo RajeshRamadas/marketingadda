@@ -2,60 +2,6 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script>
-      document.onreadystatechange = function () {
-        if (document.readyState === "loading") {
-          nodisplay_content();
-          document.querySelector("body").style.visibility = "hidden";
-        } else if (document.readyState === "complete") {
-          display_content();
-          nodisplayloading();
-          document.querySelector("body").style.visibility = "visible";
-        } else {
-          document.querySelector("body").style.visibility = "visible";
-          nodisplay_content();
-          displayloading();
-        }
-      };
-
-      function nodisplayloading() {
-        var preloader_active =
-          document.getElementsByClassName("preloader-active");
-        preloader_active[0].style.display = "none";
-      }
-
-      function displayloading() {
-        var preloader_active =
-          document.getElementsByClassName("preloader-active");
-        preloader_active[0].style.display = "block";
-      }
-
-      function display_content() {
-        var preloader_header =
-          document.getElementsByClassName("preloader-header");
-        preloader_header[0].style.visibility = "visible";
-
-        var preloader_main = document.getElementsByClassName("preloader-main");
-        preloader_main[0].style.visibility = "visible";
-
-        var preloader_footer =
-          document.getElementsByClassName("preloader-footer");
-        preloader_footer[0].style.visibility = "visible";
-      }
-
-      function nodisplay_content() {
-        var preloader_header =
-          document.getElementsByClassName("preloader-header");
-        preloader_header[0].style.visibility = "hidden";
-
-        var preloader_main = document.getElementsByClassName("preloader-main");
-        preloader_main[0].style.visibility = "hidden";
-
-        var preloader_footer =
-          document.getElementsByClassName("preloader-footer");
-        preloader_footer[0].style.visibility = "hidden";
-      }
-    </script>
     <!--
     <script
     src="https://kit.fontawesome.com/3043bdb9aa.js"
@@ -82,15 +28,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      content="width=device-width, initial-scale=1.0"
     />
 
-    <meta http-equiv="Expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-
-    <meta name="description" content="Delivering digital transformation" />
+    <meta name="description" content="Marketingadda helps businesses grow online with UI/UX design, AI applications, intelligent automation and digital marketing. Based in Bangalore." />
     <meta
       name="keywords"
-      content=" Consulting, marketing, digital transformation"
+      content="UI/UX design, AI applications, intelligent automation, digital marketing, Bangalore"
     />
 
     <meta name="author" content="MarketingAdda.com" />
@@ -123,7 +67,7 @@
       href="./images/favicon/favicon-16x16.png"
     />
     <title>
-      MarketingAdda - Consulting | Marketing | Digital Transformation
+      MarketingAdda - UI/UX Design | AI Apps | Automation | Digital Marketing
     </title>
     <meta
       name="google-site-verification"
@@ -137,41 +81,33 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@MarketingaddaO" />
     <meta name="twitter:creator" content="@MarketingaddaO" />
-    <meta name="twitter:domain" content="https://www.marketingadda.com/" />
-    <meta name="twitter:title" content="Delivering digital transformation" />
+    <meta name="twitter:domain" content="marketingadda.com" />
+    <meta name="twitter:title" content="Marketingadda: design, AI apps, automation and digital marketing" />
     <meta
       name="twitter:description"
-      content="Grow your online presence by connecting limitless customers."
+      content="Marketingadda helps businesses grow online with UI/UX design, AI applications, intelligent automation and digital marketing. Based in Bangalore."
     />
     <meta
       name="twitter:image"
       content="https://www.marketingadda.com/images/marketingadda.png"
     />
     <meta
-      name="twitter:image"
-      content="https://www.marketingadda.com/images/marketingadda.webp"
-    />
-    <meta
       name="twitter:image:alt"
-      content="Get your business online at most afforable price"
+      content="Marketingadda logo"
     />
-    <meta property="og:title" content="Delivering digital transformation" />
+    <meta property="og:title" content="Marketingadda: design, AI apps, automation and digital marketing" />
     <meta property="og:url" content="https://www.marketingadda.com/" />
     <meta
       property="og:image"
       content="https://www.marketingadda.com/images/marketingadda.png"
     />
     <meta
-      property="og:image"
-      content="https://www.marketingadda.com/images/marketingadda.webp"
+      property="og:image:alt"
+      content="Marketingadda logo"
     />
     <meta
-      name="og:image:alt"
-      content="Get your business online at most afforable price"
-    />
-    <meta
-      name="og:description"
-      content="Grow your online presence by connecting limitless customers."
+      property="og:description"
+      content="Marketingadda helps businesses grow online with UI/UX design, AI applications, intelligent automation and digital marketing. Based in Bangalore."
     />
 
     <meta property="og:site_name" content="Marketingadda" />
@@ -181,24 +117,39 @@
     <meta itemprop="name" content="Marketingadda" />
     <meta
       itemprop="description"
-      content="Grow your online presence by connecting limitless customers."
+      content="Marketingadda helps businesses grow online with UI/UX design, AI applications, intelligent automation and digital marketing. Based in Bangalore."
     />
     <meta
       itemprop="image"
       content="https://www.marketingadda.com/images/marketingadda.webp"
     />
-    <meta
-      itemprop="image"
-      content="https://www.marketingadda.com/images/marketingadda.png"
-    />
     <meta name="HandheldFriendly" content="true" />
     <meta http-equiv="content-language" content="en-in" />
-    <meta name="geo.position" content=" 12.972442;77.580643" />
+    <meta name="geo.position" content="12.972442;77.580643" />
     <meta name="geo.placename" content="Bengaluru" />
     <meta name="geo.region" content="IN-KA" />
 
     <meta name="theme-color" content="#012b4d" />
     <link rel="manifest" href="./manifest.json" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "UDO TECHNOLOGIES LLP",
+        "alternateName": "MarketingAdda",
+        "url": "https://www.marketingadda.com/",
+        "telephone": "+91-8105568225",
+        "email": "hello@marketingadda.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "18, Kempanna Layout, Ramachandrapura, Jalahalli Post, Jalahalli",
+          "addressLocality": "Bangalore",
+          "addressRegion": "Karnataka",
+          "postalCode": "560013",
+          "addressCountry": "IN"
+        }
+      }
+    </script>
     <link rel="canonical" href="https://www.marketingadda.com/" />
     <link
       rel="alternate"
@@ -211,13 +162,16 @@
       href="https://www.marketingadda.com/"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Prompt:400|Play:700&display=swap"
+    />
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body class="bg_logo" id="bg_logo" style="visibility: hidden">
-    <div class="preloader-active">
-      <div class="loading"></div>
-    </div>
+  <body class="bg_logo" id="bg_logo">
     <header class="preloader-header">
       <nav>
         <div class="container header_margin">
@@ -471,8 +425,6 @@
                     <a
                       href="#"
                       class="menu-nav nav-active-ma"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','0')"
                       ><span>MarketingAdda</span></a
                     >
                   </li>
@@ -480,8 +432,6 @@
                     <a
                       href="#"
                       class="menu-nav nav-active-design"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','1')"
                       ><span>UI/UX Design</span></a
                     >
                   </li>
@@ -489,8 +439,6 @@
                     <a
                       href="#"
                       class="menu-nav nav-active-dev"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','2')"
                       ><span> Intelli Automation</span></a
                     >
                   </li>
@@ -498,42 +446,31 @@
                     <a
                       href="#"
                       class="menu-nav nav-active-app"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','3')"
-                      ><span>Application</span></a
+                      ><span>AI Applications</span></a
                     >
                   </li>
                   <li>
                     <a
                       href="#"
                       class="menu-nav nav-active-digimarket"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','4')"
                       ><span>Digital Marketing</span></a
                     >
                   </li>
                   <li>
                     <a
                       href="#"
-                      class="menu-nav nav-active-price"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','5')"
-                      ><span>Pricing</span></a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
                       class="menu-nav nav-active-about"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','6')"
                       ><span>About us</span></a>
                   </li>
+                  <li>
+                    <a href="#" class="menu-nav nav-active-contact"
+                      ><span>Contact us</span></a>
+                  </li>
                 <!-- <li class="overlay_email" style="padding-top: 4rem">
-                    <a href="mailto:hello@marketingaddda.com"
+                    <a href="mailto:hello@marketingadda.com"
                       ><span
                         >Get in touch!<br /><u
-                          >hello@marketingaddda.com</u
+                          >hello@marketingadda.com</u
                         ></span
                       ></a
                     >
@@ -572,18 +509,18 @@
                 >
               </li>
               <li class="nav-active nav-active-app">
-                <a href="#" class="hover-target"> <span>Application</span></a>
+                <a href="#" class="hover-target"> <span>AI Applications</span></a>
               </li>
               <li class="nav-active nav-active-digimarket">
                 <a href="#" class="hover-target">
                   <span>Digital Marketing</span></a
                 >
               </li>
-              <li class="nav-active nav-active-price">
-                <a href="#" class="hover-target"> <span>Pricing</span></a>
-              </li>
               <li class="nav-active nav-active-about">
                 <a href="#" class="hover-target"> <span>About us</span></a>
+              </li>
+              <li class="nav-active nav-active-contact">
+                <a href="#" class="hover-target"> <span>Contact us</span></a>
               </li>
             </ul>
           </nav>
@@ -602,27 +539,18 @@
               <div class="c-hero">
                 <div class="c-hero__content">
                   <h1 class="c-hero__headline reveal-text">
-                    <span>
-                      Hi, We’re<br />
-                      Marketing Adda!
-                    </span>
+                    <span>Hi, We’re<br />
+                      Marketing Adda!</span>
                   </h1>
                   <h2 class="c-hero__subheadline reveal-text">
-                    <span>
-                      EVERY BUSINESS NEEDS A&nbsp;MARKETING&nbsp;PLAN,<br />
-                      WE'RE&nbsp;HERE&nbsp;TO&nbsp;SUPPORT&nbsp;YOU</span>
+                    <span>YOUR GROWTH PARTNER FOR&nbsp;DESIGN,<br />
+                      TECHNOLOGY&nbsp;AND&nbsp;MARKETING</span>
                   </h2>
                   <p class="c-hero__Para reveal-text">
                     <span>
-                      We <span class="bold">strategize</span> tailored marketing plan
-                      to grow your online presence by connecting with limitless
-                      <span class="bold">customers</span>. If you're looking
-                      for a <span class="bold">distinctive</span> and
-                      <span class="bold">amazing</span> website or application.
+                      We help businesses get found, get chosen and grow online. From a <span class="bold">strategy</span> built around your goals to a <span class="bold">website</span> or <span class="bold">app</span> your customers enjoy using, we take care of the details so you can focus on running your <span class="bold">business</span>.
                       <br /><br />
-                      <span class="underline_mark1"
-                        >Your search ends here!</span
-                      >
+                      <span class="underline_mark1">Let’s build something great together!</span>
                     </span>
                   </p>
                 </div>
@@ -632,18 +560,17 @@
               <div class="c-hero">
                 <div class="c-hero__content">
                   <h1 class="c-hero__headline home-title">
-                    <span> UI/UX Design</span>
+                    <span>UI/UX Design</span>
                   </h1>
                   <h2 class="c-hero__subheadline home-title">
-                    <span>WIREFRAME • VISUAL DESIGN • UI/UX DESIGN</span>
+                    <span>RESEARCH • WIREFRAMES • VISUAL DESIGN</span>
                   </h2>
                   <p class="c-hero__Para home-title">
                     <span>
-                    We embrace <span class="bold">modern</span>, <span class="bold">trending</span> design practices tailored to our clients' unique needs.
-                    Our approach combines <span class="bold">deep research</span> and <span class="bold">insightful analysis</span> to deliver designs that offer a <span class="bold">competitive edge</span>.
-                    <br /><br />
-                    <span class="underline_mark">Experience the difference — feel the impact of great design!</span>
-                  </span>
+                      Good design is more than looks. We start by understanding your <span class="bold">users</span> and your <span class="bold">goals</span>, then shape wireframes and polished interfaces that are <span class="bold">easy to use</span> and true to your <span class="bold">brand</span>. Every screen is designed to guide visitors towards action.
+                      <br /><br />
+                      <span class="underline_mark">Design that looks good and works even better!</span>
+                    </span>
                   </p>
                 </div>
               </div>
@@ -654,21 +581,16 @@
                   <h1 class="c-hero__headline reveal-text">
                     <span>Intelligent<br />Automation</span>
                   </h1>
-
                   <h2 class="c-hero__subheadline reveal-text">
-                    <span>CHATBOTS · WORKFLOWS · INTELLIGENT SYSTEMS</span>
+                    <span>CHATBOTS · WORKFLOWS · AI ASSISTANTS</span>
                   </h2>
-
                   <p class="c-hero__Para reveal-text">
                     <span>
-                      We design <span class="bold">intelligent automation systems</span> that reduce your workload and boost efficiency.
-                      From <span class="bold">customer service chatbots</span> that engage 24/7, to <span class="bold">backend workflow bots</span> that eliminate repetitive tasks,
-                      our solutions adapt to your unique business needs and scale as you grow.
+                      Let software handle the repetitive work. We build <span class="bold">chatbots</span> that answer customer questions around the clock and <span class="bold">workflow automations</span> that connect your tools, cut manual data entry and reduce errors. Your team gets time back for the <span class="bold">work that matters</span>.
                       <br /><br />
-                      <span class="underline_mark">Let’s automate your success!</span>
+                      <span class="underline_mark">Work smarter, not harder!</span>
                     </span>
                   </p>
-
                 </div>
               </div>
             </li>
@@ -676,20 +598,16 @@
               <div class="c-hero">
                 <div class="c-hero__content">
                   <h1 class="c-hero__headline reveal-text">
-                    <span>Application</span>
+                    <span>AI<br />Applications</span>
                   </h1>
-
                   <h2 class="c-hero__subheadline reveal-text">
-                    <span>NATIVE AND HYBRID MOBILE APPLICATIONS</span>
+                    <span>GENERATIVE AI · SMART APPS · DATA INSIGHTS</span>
                   </h2>
-
                   <p class="c-hero__Para reveal-text">
                     <span>
-                      The most <span class="bolder">preferred</span> way to access digital services today is through <span class="bold">mobile</span> — no surprise, as <span class="bold">67.03%</span> of people own mobile devices.
-                      To capture this growing market, many <span class="bold">entrepreneurs</span> adopt a <span class="bold">mobile-first</span> strategy.
-                      For example, <span class="bold">e-commerce mobile applications</span> offer better control over generating <span class="bold">leads and traffic</span>, thanks to their ability to adapt to customer behavior and preferences.
+                      We build <span class="bold">AI-powered applications</span> that put your business data to work. From <span class="bold">generative AI assistants</span> that draft content and answer customer questions, to <span class="bold">smart web and mobile apps</span> that recommend products, read documents and forecast demand, every solution is designed around a real <span class="bold">business problem</span>. We take you from the first prototype to a <span class="bold">secure, scalable launch</span>.
                       <br /><br />
-                      <span class="underline_mark">We can develop an app for you!</span>
+                      <span class="underline_mark">Turn your ideas into intelligent products!</span>
                     </span>
                   </p>
                 </div>
@@ -701,72 +619,73 @@
                   <h1 class="c-hero__headline reveal-text">
                     <span>Digital<br />Marketing</span>
                   </h1>
-
                   <h2 class="c-hero__subheadline reveal-text">
-                    <span>SOCIAL MEDIA · SEO · INFLUENCER MARKETING</span>
+                    <span>SOCIAL MEDIA · SEO · PAID ADS · INFLUENCERS</span>
                   </h2>
-
                   <p class="c-hero__Para reveal-text">
                     <span>
-                      Marketing is the <span class="bold">backbone</span> of any successful business.
-                      In today’s digital age, it spans multiple channels of <span class="bold">influence</span>—including social media, email, affiliate, content marketing, and pay-per-click advertising.
-                      While <span class="bold">organic marketing</span> can build credibility, it's often slow to produce results.
-                      Modern businesses are turning to <span class="bold">inorganic</span> strategies to reach <span class="bold">customers</span> faster and more effectively.
+                      Great products need to be seen. We combine <span class="bold">SEO</span> and <span class="bold">content</span> that build lasting visibility with <span class="bold">paid campaigns</span> and <span class="bold">influencer partnerships</span> that bring results quickly. Every campaign is tracked, so you always know what your <span class="bold">marketing budget</span> is delivering.
                       <br /><br />
-                      <span class="underline_mark">We can fuel your marketing needs!</span>
+                      <span class="underline_mark">More reach, more leads, more growth!</span>
                     </span>
                   </p>
-
                 </div>
               </div>
             </li>
             <li class="carousel_slide">
               <div class="c-hero">
                 <div class="c-hero__content">
-                <h1 class="c-hero__headline reveal-text">
-                  <span>Pricing</span>
-                </h1>
-
-                <h2 class="c-hero__subheadline reveal-text">
-                  <span>PRICING THAT FITS YOUR BUSINESS BUDGET</span>
-                </h2>
-                <p class="c-hero__Para reveal-text">
-                  <span>
-                    <span class="bold">Marketingadda</span> was established to deliver quality services at the most
-                    <span class="bold">affordable prices</span>. We understand the financial constraints of startups and growing businesses,
-                    and our pricing reflects that.
-                    Our quotes are competitively priced compared to industry standards and designed to fit <span class="bold">real-world budgets</span>.
-                    <br /><br />
-                    <span class="underline_mark">Contact us to get the best pricing for your business requirement!</span>
-                  </span>
-                </p>
-
+                  <h1 class="c-hero__headline reveal-text">
+                    <span>About us</span>
+                  </h1>
+                  <h2 class="c-hero__subheadline reveal-text">
+                    <span>CONSULTING · DESIGN · SOFTWARE DEVELOPMENT</span>
+                  </h2>
+                  <p class="c-hero__Para reveal-text">
+                    <span>
+                      Marketingadda is run by <span class="bold">UDO Technologies LLP</span>, based in <span class="bold">Bangalore</span>. Our team of experienced <span class="bold">market researchers</span>, designers and developers measures success by <span class="bold">your results</span>, not just by delivery.
+                      <br /><br />
+                      Before you commit, we share a <span class="bold">demo</span> and a detailed proposal, so you know exactly what you will get.
+                      <br /><br />
+                      <span class="underline_mark">Talk to us to learn more!</span>
+                    </span>
+                  </p>
                 </div>
               </div>
             </li>
             <li class="carousel_slide">
               <div class="c-hero">
                 <div class="c-hero__content">
-                <h1 class="c-hero__headline reveal-text">
-                  <span>About us</span>
-                </h1>
+                  <h1 class="c-hero__headline reveal-text">
+                    <span>Contact us</span>
+                  </h1>
 
-                <h2 class="c-hero__subheadline reveal-text">
-                  <span>CONSULTING · SOFTWARE DEVELOPMENT</span>
-                </h2>
+                  <h2 class="c-hero__subheadline reveal-text">
+                    <span>UDO TECHNOLOGIES LLP</span>
+                  </h2>
 
-                <p class="c-hero__Para reveal-text">
-                  <span>
-                    Our goal is our client's <span class="bold">success</span> — not just delivering a solution!
-                    We have a team of <span class="bold">well-seasoned</span> market research analysts and developers.
-                    <br /><br />
-                    A <span class="bold">demo</span> presentation is provided before project <span class="bold">confirmation</span>,
-                    along with a detailed proposal outlining the final product.
-                    <br /><br />
-                    <span class="underline_mark">Talk to us for more information!</span>
-                  </span>
-                </p>
-
+                  <div class="c-hero__Para reveal-text">
+                    <address class="contact_grid">
+                      <div class="contact_item contact_item--address">
+                        <span class="contact_label">Address</span>
+                        18, Kempanna Layout, Ramachandrapura,<br />
+                        Jalahalli Post, Jalahalli, Bangalore North,<br />
+                        Bangalore, Karnataka, India - 560013
+                      </div>
+                      <div class="contact_item">
+                        <span class="contact_label">Phone</span>
+                        <a href="tel:+918105568225" class="contact_link">+91 81055 68225</a>
+                      </div>
+                      <div class="contact_item">
+                        <span class="contact_label">Email</span>
+                        <a href="mailto:hello@marketingadda.com" class="contact_link">hello@marketingadda.com</a>
+                      </div>
+                      <div class="contact_item">
+                        <span class="contact_label">WhatsApp</span>
+                        <a href="https://wa.me/918105568225?text=Hi%20MarketingAdda%2C%20I%27d%20like%20to%20discuss%20a%20project." class="contact_link" target="_blank" rel="noopener">Chat with us on WhatsApp</a>
+                      </div>
+                    </address>
+                  </div>
                 </div>
               </div>
             </li>
@@ -834,20 +753,21 @@
           <div class="cta_banner">
             <div class="cta_banner-info">
               <a>Have a project in mind? Let's talk!</a>
-              <button
+              <a
                 class="cta_banner-glow hover-target"
-                type="button"
-                onclick="javascript:void(Tawk_API.toggle())"
+                href="https://wa.me/918105568225?text=Hi%20MarketingAdda%2C%20I%27d%20like%20to%20discuss%20a%20project."
+                target="_blank"
+                rel="noopener"
               >
-                Get in Touch
-              </button>
+                WhatsApp Us
+              </a>
             </div>
           </div>
         </div>
 
         <div class="btn-contact">
-          <a onclick="" class="btn"
-            >Contact us</a
+          <a href="https://wa.me/918105568225?text=Hi%20MarketingAdda%2C%20I%27d%20like%20to%20discuss%20a%20project." class="btn" target="_blank" rel="noopener"
+            >WhatsApp us</a
           >
         </div>
       </section>
@@ -983,21 +903,21 @@
       </section>
     </footer>
 
-    <script src="./js/script.js"></script>
-    <!--Start of Tawk.to Script-->
-    <script>
-      var Tawk_API = Tawk_API || {},
-        Tawk_LoadStart = new Date();
-      (function () {
-        var s1 = document.createElement("script"),
-          s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = "https://embed.tawk.to/61005570649e0a0a5cce382d/1fbkkrggq";
-        s1.charset = "UTF-8";
-        s1.setAttribute("crossorigin", "*");
-        s0.parentNode.insertBefore(s1, s0);
-      })();
-    </script>
-    <!--End of Tawk.to Script-->
+    <script src="./js/script.js" defer></script>
+    <a
+      class="whatsapp_float"
+      href="https://wa.me/918105568225?text=Hi%20MarketingAdda%2C%20I%27d%20like%20to%20discuss%20a%20project."
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat with us on WhatsApp"
+      title="Chat with us on WhatsApp"
+    >
+      <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+        <path
+          fill="#fff"
+          d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75A12.96 12.96 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3zm0 23.8c-2.02 0-4-.54-5.72-1.57l-.41-.24-3.96 1.04 1.06-3.86-.27-.4A10.78 10.78 0 0 1 5.2 16c0-5.97 4.86-10.82 10.84-10.82 5.96 0 10.8 4.85 10.8 10.82 0 5.97-4.84 10.8-10.8 10.8zm5.93-8.09c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.51-.16-.73.16-.21.32-.84 1.06-1.03 1.27-.19.22-.38.24-.7.08-.33-.16-1.37-.5-2.6-1.6-.96-.86-1.61-1.92-1.8-2.24-.19-.32-.02-.5.14-.66.15-.14.33-.38.49-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.69 0 1.58 1.16 3.12 1.32 3.33.16.22 2.28 3.48 5.53 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.92-.78 2.19-1.54.27-.76.27-1.41.19-1.54-.08-.14-.3-.22-.62-.38z"
+        />
+      </svg>
+    </a>
   </body>
 </html>
