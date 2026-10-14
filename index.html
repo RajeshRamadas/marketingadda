@@ -2,60 +2,6 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script>
-      document.onreadystatechange = function () {
-        if (document.readyState === "loading") {
-          nodisplay_content();
-          document.querySelector("body").style.visibility = "hidden";
-        } else if (document.readyState === "complete") {
-          display_content();
-          nodisplayloading();
-          document.querySelector("body").style.visibility = "visible";
-        } else {
-          document.querySelector("body").style.visibility = "visible";
-          nodisplay_content();
-          displayloading();
-        }
-      };
-
-      function nodisplayloading() {
-        var preloader_active =
-          document.getElementsByClassName("preloader-active");
-        preloader_active[0].style.display = "none";
-      }
-
-      function displayloading() {
-        var preloader_active =
-          document.getElementsByClassName("preloader-active");
-        preloader_active[0].style.display = "block";
-      }
-
-      function display_content() {
-        var preloader_header =
-          document.getElementsByClassName("preloader-header");
-        preloader_header[0].style.visibility = "visible";
-
-        var preloader_main = document.getElementsByClassName("preloader-main");
-        preloader_main[0].style.visibility = "visible";
-
-        var preloader_footer =
-          document.getElementsByClassName("preloader-footer");
-        preloader_footer[0].style.visibility = "visible";
-      }
-
-      function nodisplay_content() {
-        var preloader_header =
-          document.getElementsByClassName("preloader-header");
-        preloader_header[0].style.visibility = "hidden";
-
-        var preloader_main = document.getElementsByClassName("preloader-main");
-        preloader_main[0].style.visibility = "hidden";
-
-        var preloader_footer =
-          document.getElementsByClassName("preloader-footer");
-        preloader_footer[0].style.visibility = "hidden";
-      }
-    </script>
     <!--
     <script
     src="https://kit.fontawesome.com/3043bdb9aa.js"
@@ -82,10 +28,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      content="width=device-width, initial-scale=1.0"
     />
-
-    <meta http-equiv="Expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 
     <meta name="description" content="Delivering digital transformation" />
     <meta
@@ -137,7 +81,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@MarketingaddaO" />
     <meta name="twitter:creator" content="@MarketingaddaO" />
-    <meta name="twitter:domain" content="https://www.marketingadda.com/" />
+    <meta name="twitter:domain" content="marketingadda.com" />
     <meta name="twitter:title" content="Delivering digital transformation" />
     <meta
       name="twitter:description"
@@ -148,12 +92,8 @@
       content="https://www.marketingadda.com/images/marketingadda.png"
     />
     <meta
-      name="twitter:image"
-      content="https://www.marketingadda.com/images/marketingadda.webp"
-    />
-    <meta
       name="twitter:image:alt"
-      content="Get your business online at most afforable price"
+      content="Get your business online at most affordable price"
     />
     <meta property="og:title" content="Delivering digital transformation" />
     <meta property="og:url" content="https://www.marketingadda.com/" />
@@ -162,15 +102,11 @@
       content="https://www.marketingadda.com/images/marketingadda.png"
     />
     <meta
-      property="og:image"
-      content="https://www.marketingadda.com/images/marketingadda.webp"
+      property="og:image:alt"
+      content="Get your business online at most affordable price"
     />
     <meta
-      name="og:image:alt"
-      content="Get your business online at most afforable price"
-    />
-    <meta
-      name="og:description"
+      property="og:description"
       content="Grow your online presence by connecting limitless customers."
     />
 
@@ -187,13 +123,9 @@
       itemprop="image"
       content="https://www.marketingadda.com/images/marketingadda.webp"
     />
-    <meta
-      itemprop="image"
-      content="https://www.marketingadda.com/images/marketingadda.png"
-    />
     <meta name="HandheldFriendly" content="true" />
     <meta http-equiv="content-language" content="en-in" />
-    <meta name="geo.position" content=" 12.972442;77.580643" />
+    <meta name="geo.position" content="12.972442;77.580643" />
     <meta name="geo.placename" content="Bengaluru" />
     <meta name="geo.region" content="IN-KA" />
 
@@ -211,13 +143,16 @@
       href="https://www.marketingadda.com/"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Prompt:400|Play:700&display=swap"
+    />
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body class="bg_logo" id="bg_logo" style="visibility: hidden">
-    <div class="preloader-active">
-      <div class="loading"></div>
-    </div>
+  <body class="bg_logo" id="bg_logo">
     <header class="preloader-header">
       <nav>
         <div class="container header_margin">
@@ -471,8 +406,6 @@
                     <a
                       href="#"
                       class="menu-nav nav-active-ma"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','0')"
                       ><span>MarketingAdda</span></a
                     >
                   </li>
@@ -480,8 +413,6 @@
                     <a
                       href="#"
                       class="menu-nav nav-active-design"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','1')"
                       ><span>UI/UX Design</span></a
                     >
                   </li>
@@ -489,8 +420,6 @@
                     <a
                       href="#"
                       class="menu-nav nav-active-dev"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','2')"
                       ><span> Intelli Automation</span></a
                     >
                   </li>
@@ -498,8 +427,6 @@
                     <a
                       href="#"
                       class="menu-nav nav-active-app"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','3')"
                       ><span>Application</span></a
                     >
                   </li>
@@ -507,8 +434,6 @@
                     <a
                       href="#"
                       class="menu-nav nav-active-digimarket"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','4')"
                       ><span>Digital Marketing</span></a
                     >
                   </li>
@@ -516,8 +441,6 @@
                     <a
                       href="#"
                       class="menu-nav nav-active-price"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','5')"
                       ><span>Pricing</span></a
                     >
                   </li>
@@ -525,8 +448,6 @@
                     <a
                       href="#"
                       class="menu-nav nav-active-about"
-                      type="text/html"
-                      onclick="handleSidemenu('sel_class','6')"
                       ><span>About us</span></a>
                   </li>
                 <!-- <li class="overlay_email" style="padding-top: 4rem">
@@ -837,7 +758,7 @@
               <button
                 class="cta_banner-glow hover-target"
                 type="button"
-                onclick="javascript:void(Tawk_API.toggle())"
+                data-contact
               >
                 Get in Touch
               </button>
@@ -846,7 +767,7 @@
         </div>
 
         <div class="btn-contact">
-          <a onclick="" class="btn"
+          <a href="mailto:hello@marketingadda.com" class="btn" data-contact
             >Contact us</a
           >
         </div>
@@ -983,7 +904,7 @@
       </section>
     </footer>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js" defer></script>
     <!--Start of Tawk.to Script-->
     <script>
       var Tawk_API = Tawk_API || {},
