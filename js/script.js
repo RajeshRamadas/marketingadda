@@ -28,23 +28,6 @@ if (cursor && cursor2 && cursor3) {
     });
 }
 
-/**** Contact: open the chat widget, fall back to email if it isn't available */
-
-var CONTACT_EMAIL = "hello@marketingadda.com";
-
-function openContact(e) {
-    if (window.Tawk_API && typeof window.Tawk_API.toggle === "function") {
-        if (e) e.preventDefault();
-        window.Tawk_API.toggle();
-    } else if (!e || !e.currentTarget || !e.currentTarget.href) {
-        window.location.href = "mailto:" + CONTACT_EMAIL;
-    }
-}
-
-document.querySelectorAll("[data-contact]").forEach(function (el) {
-    el.addEventListener("click", openContact);
-});
-
 /**** Slider, dot navigation, side menu and hamburger menu */
 
 const track = document.querySelector(".carousel_track");

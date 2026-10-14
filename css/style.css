@@ -1005,7 +1005,7 @@ header .header_margin {
   margin: 0 auto;
 }
 
-.cta_banner-info a {
+.cta_banner-info a:not(.cta_banner-glow) {
   letter-spacing: 0.0625rem;
   margin: 0.625rem 0;
   font-size: 1.25rem;
@@ -1031,7 +1031,7 @@ header .header_margin {
 }
 
 @media only screen and (max-width: 991px) {
-  .cta_banner-info a {
+  .cta_banner-info a:not(.cta_banner-glow) {
     font-size: 0.8125rem;
   }
   .cta_banner {
@@ -1046,7 +1046,9 @@ header .header_margin {
 }
 
 .cta_banner-glow {
-  width: 7rem;
+  width: 7.5rem;
+  font-weight: 400;
+  white-space: nowrap;
   height: 3.125rem;
   border: none;
   outline: none;
@@ -1061,6 +1063,12 @@ header .header_margin {
   top: 1.18rem;
   right: 1.25rem;
   float: inline-end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+  text-decoration: none;
 }
 
 .cta_banner-glow:before {
@@ -1958,6 +1966,7 @@ header .header_margin {
     -moz-user-select: none;
     user-select: none;
     text-transform: capitalize;
+    text-decoration: none;
     color: #fff;
     cursor: pointer;
     display: inline-block;
@@ -2006,6 +2015,36 @@ header .header_margin {
     transform: translateY(-90%);
     transform: scale(0.8);
     cursor: pointer;
+  }
+}
+
+/* WhatsApp floating button */
+.whatsapp_float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp_float:hover {
+  transform: scale(1.08);
+}
+
+@media only screen and (max-width: 991px) {
+  .whatsapp_float {
+    right: 1rem;
+    bottom: 1rem;
+    width: 3rem;
+    height: 3rem;
   }
 }
 
