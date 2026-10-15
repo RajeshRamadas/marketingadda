@@ -1186,6 +1186,13 @@ header .header_margin {
     transform: translateX(-50%);
     z-index: 1000;
     white-space: nowrap;
+    max-width: calc(100vw - 2rem);
+  }
+
+  .mobile_pager__next {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .mobile_pager button {
@@ -1200,6 +1207,7 @@ header .header_margin {
   }
 
   .mobile_pager__prev {
+    flex-shrink: 0;
     width: 2.25rem;
     height: 2.25rem;
     padding: 0 !important;

@@ -75,6 +75,7 @@ if (track) {
         const currentSlide = slides[currentIndex];
         const targetSlide = slides[targetIndex];
 
+        track.classList.remove("is-nudging");
         track.style.transform = "translateX(-" + targetIndex * 100 + "%)";
         currentSlide.classList.remove("current-slide");
         targetSlide.classList.add("current-slide");
@@ -144,28 +145,33 @@ if (track) {
 
     // First visit on a phone: nudge the slide and show "Swipe for more" once.
     const swipeHint = document.querySelector(".swipe_hint");
-    const isPhonePortrait = window.matchMedia("(max-width: 991px) and (orientation: portrait)").matches;
+    const phonePortrait = window.matchMedia("(max-width: 991px) and (orientation: portrait)");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let hintSeen = false;
     try {
         hintSeen = localStorage.getItem("swipeHintSeen") === "1";
     } catch (err) {
         hintSeen = false;
     }
-    if (swipeHint && isPhonePortrait && !hintSeen && currentIndex === 0) {
-        setTimeout(() => {
-            if (currentIndex !== 0) return;
-            swipeHint.classList.add("is-visible");
-            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                track.classList.add("is-nudging");
-                setTimeout(() => track.classList.remove("is-nudging"), 1200);
-            }
-            setTimeout(() => swipeHint.classList.remove("is-visible"), 3000);
-            try {
-                localStorage.setItem("swipeHintSeen", "1");
-            } catch (err) {
-                // Private mode or blocked storage: the hint may show again next time.
-            }
-        }, 1500);
+    const showSwipeHint = () => {
+        if (hintSeen || currentIndex !== 0 || !phonePortrait.matches) return;
+        hintSeen = true;
+        swipeHint.classList.add("is-visible");
+        track.classList.add("is-nudging");
+        setTimeout(() => track.classList.remove("is-nudging"), 1200);
+        setTimeout(() => swipeHint.classList.remove("is-visible"), 3000);
+        try {
+            localStorage.setItem("swipeHintSeen", "1");
+        } catch (err) {
+            // Private mode or blocked storage: the hint may show again next time.
+        }
+    };
+    if (swipeHint && !reducedMotion && !hintSeen) {
+        setTimeout(showSwipeHint, 1500);
+        // A phone turned to portrait later still gets the hint.
+        if (phonePortrait.addEventListener) {
+            phonePortrait.addEventListener("change", () => setTimeout(showSwipeHint, 600));
+        }
     }
 
     if (nextButton) nextButton.addEventListener("click", () => goToSlide(currentIndex + 1));
