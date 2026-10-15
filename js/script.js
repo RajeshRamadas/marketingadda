@@ -47,6 +47,23 @@ if (track) {
 
     let currentIndex = 0;
 
+    // Phone pager: "Next: <section> →" button and an "n / total" counter.
+    const pagerPrev = document.querySelector(".mobile_pager__prev");
+    const pagerNext = document.querySelector(".mobile_pager__next");
+    const pagerCount = document.querySelector(".mobile_pager__count");
+    const slideTitle = (slide) => {
+        const heading = slide.querySelector(".c-hero__headline");
+        return heading ? (heading.innerText || heading.textContent).replace(/\s+/g, " ").trim() : "";
+    };
+
+    function updatePager() {
+        if (!pagerNext) return;
+        const isLast = currentIndex === slides.length - 1;
+        pagerNext.textContent = isLast ? "Back to start ↺" : "Next: " + slideTitle(slides[currentIndex + 1]) + " →";
+        if (pagerPrev) pagerPrev.disabled = currentIndex === 0;
+        if (pagerCount) pagerCount.textContent = currentIndex + 1 + " / " + slides.length;
+    }
+
     // Percent-based positions stay correct when the window is resized or rotated.
     slides.forEach((slide, index) => {
         slide.style.left = index * 100 + "%";
@@ -79,6 +96,7 @@ if (track) {
         if (nextButton) nextButton.classList.toggle("is-hidden", targetIndex === slides.length - 1);
 
         currentIndex = targetIndex;
+        updatePager();
 
         // Keep the address bar in step so each section can be linked and shared.
         if (window.history && history.replaceState) {
@@ -115,6 +133,40 @@ if (track) {
         if (index >= 0) goToSlide(index);
         resetContainerScroll();
     });
+
+    if (pagerNext) {
+        pagerNext.addEventListener("click", () =>
+            goToSlide(currentIndex === slides.length - 1 ? 0 : currentIndex + 1)
+        );
+    }
+    if (pagerPrev) pagerPrev.addEventListener("click", () => goToSlide(currentIndex - 1));
+    updatePager();
+
+    // First visit on a phone: nudge the slide and show "Swipe for more" once.
+    const swipeHint = document.querySelector(".swipe_hint");
+    const isPhonePortrait = window.matchMedia("(max-width: 991px) and (orientation: portrait)").matches;
+    let hintSeen = false;
+    try {
+        hintSeen = localStorage.getItem("swipeHintSeen") === "1";
+    } catch (err) {
+        hintSeen = false;
+    }
+    if (swipeHint && isPhonePortrait && !hintSeen && currentIndex === 0) {
+        setTimeout(() => {
+            if (currentIndex !== 0) return;
+            swipeHint.classList.add("is-visible");
+            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                track.classList.add("is-nudging");
+                setTimeout(() => track.classList.remove("is-nudging"), 1200);
+            }
+            setTimeout(() => swipeHint.classList.remove("is-visible"), 3000);
+            try {
+                localStorage.setItem("swipeHintSeen", "1");
+            } catch (err) {
+                // Private mode or blocked storage: the hint may show again next time.
+            }
+        }, 1500);
+    }
 
     if (nextButton) nextButton.addEventListener("click", () => goToSlide(currentIndex + 1));
     if (prevButton) prevButton.addEventListener("click", () => goToSlide(currentIndex - 1));

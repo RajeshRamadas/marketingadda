@@ -1165,6 +1165,95 @@ header .header_margin {
 
 /*Dot navigation end */
 
+/* Phone pager and swipe hint */
+.mobile_pager,
+.swipe_hint {
+  display: none;
+}
+
+@media only screen and (max-width: 991px) and (orientation: portrait) {
+  .carousel_button {
+    display: none;
+  }
+
+  .mobile_pager {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: fixed;
+    left: 50%;
+    bottom: 11rem;
+    transform: translateX(-50%);
+    z-index: 1000;
+    white-space: nowrap;
+  }
+
+  .mobile_pager button {
+    font-family: inherit;
+    font-size: 0.875rem;
+    color: #fff;
+    background: var(--color-primary);
+    border: 0;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  .mobile_pager__prev {
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0 !important;
+  }
+
+  .mobile_pager__prev:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .mobile_pager__count {
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    min-width: 2.5rem;
+    text-align: center;
+  }
+
+  .swipe_hint {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    background: rgba(1, 43, 77, 0.9);
+    color: #fff;
+    font-size: 0.95rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .swipe_hint.is-visible {
+    opacity: 1;
+  }
+
+  .carousel_track.is-nudging {
+    animation: swipe-nudge 1.2s ease-in-out;
+  }
+}
+
+@keyframes swipe-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  35%,
+  55% {
+    transform: translateX(-18%);
+  }
+}
+
 .carousel {
   position: absolute;
   height: 68vh;
