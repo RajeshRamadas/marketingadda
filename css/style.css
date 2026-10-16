@@ -2299,3 +2299,102 @@ header .header_margin {
     transition: none;
   }
 }
+
+.sticky-left-nav ul li.nav-active-products:hover a span,
+.sticky-left-nav ul li.selected-nav-products a span {
+  width: 7.6rem;
+  opacity: 1;
+  background-color: var(--color-primary);
+}
+
+/* Our Products: one card per app. Add a card to the .product-grid to show another product. */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  width: 80%;
+  margin-top: 4vh;
+}
+
+.product-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem;
+  border: 1px solid rgba(1, 43, 77, 0.18);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.product-card:hover,
+a.product-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(1, 43, 77, 0.14);
+}
+
+.product-card__icon {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+}
+
+.product-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.product-card__name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.product-card__text {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  opacity: 0.8;
+}
+
+.product-card__tags {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.product-card__more {
+  margin-top: 0.25rem;
+  font-weight: 600;
+}
+
+.product-card--soon {
+  background: transparent;
+  border-style: dashed;
+}
+
+@media screen and (max-width: 991px) {
+  .product-grid {
+    width: 85%;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-top: 2vh;
+  }
+
+  .product-card {
+    padding: 0.9rem;
+  }
+
+  .product-card__text {
+    font-size: 0.85rem;
+  }
+
+  /* No room for the placeholder under a real card on a phone. */
+  .product-card--soon {
+    display: none;
+  }
+}
