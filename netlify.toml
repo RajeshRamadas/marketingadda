@@ -33,3 +33,16 @@
   for = "/404.html"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+# Beautiva product page (beautiva/). beautiva.marketingadda.com is a domain alias of this site; this rewrite
+# serves the beautiva/ folder at its root. marketingadda.com/beautiva/ shows the same page.
+[[redirects]]
+  from = "https://beautiva.marketingadda.com/*"
+  to = "/beautiva/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/beautiva/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
