@@ -2417,6 +2417,7 @@ a.product-card:focus-visible {
    header and the pager, sized from the screen, and scrolls inside that box
    if a section is longer than the screen, so nothing is cut off or covered. */
 @media only screen and (max-width: 991px) and (orientation: portrait) {
+  .carousel,
   .c-hero {
     height: 100vh;
     height: 100dvh;

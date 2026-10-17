@@ -77,6 +77,10 @@ if (track) {
 
         track.classList.remove("is-nudging");
         track.style.transform = "translateX(-" + targetIndex * 100 + "%)";
+        // Open each section at its top, even if it was scrolled last time.
+        const targetContent = targetSlide.querySelector(".c-hero__content");
+        if (targetContent) targetContent.scrollTop = 0;
+
         currentSlide.classList.remove("current-slide");
         targetSlide.classList.add("current-slide");
 
@@ -205,6 +209,13 @@ if (track) {
         "wheel",
         (e) => {
             if (wheelLocked || Math.abs(e.deltaY) < 10) return;
+            // Let a long section scroll its own text before the wheel changes section.
+            const box = e.target.closest && e.target.closest(".c-hero__content");
+            if (box && box.scrollHeight > box.clientHeight + 1) {
+                const atTop = box.scrollTop <= 0;
+                const atBottom = box.scrollTop + box.clientHeight >= box.scrollHeight - 1;
+                if ((e.deltaY > 0 && !atBottom) || (e.deltaY < 0 && !atTop)) return;
+            }
             wheelLocked = true;
             setTimeout(() => {
                 wheelLocked = false;
