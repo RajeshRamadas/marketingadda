@@ -2412,3 +2412,124 @@ a.product-card:focus-visible {
     display: none;
   }
 }
+
+/* Portrait phones and tablets: the section text sits in a box between the
+   header and the pager, sized from the screen, and scrolls inside that box
+   if a section is longer than the screen, so nothing is cut off or covered. */
+@media only screen and (max-width: 991px) and (orientation: portrait) {
+  .carousel,
+  .c-hero {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .c-hero__content {
+    position: absolute;
+    top: 4.5rem;
+    bottom: 8.25rem;
+    left: 7vw;
+    right: 7vw;
+    max-width: none;
+    margin: 0;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Centre short sections; long ones start at the top and scroll. */
+  .c-hero__content > :first-child {
+    margin-top: auto;
+  }
+
+  .c-hero__content > :last-child {
+    margin-bottom: auto;
+  }
+
+  .c-hero__headline {
+    font-size: clamp(1.5rem, 7.5vw, 2.5rem);
+    line-height: 1.1;
+    overflow-wrap: break-word;
+  }
+
+  .c-hero__subheadline {
+    font-size: clamp(0.75rem, 3.5vw, 1.05rem);
+    width: 100%;
+    padding-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .c-hero__Para {
+    font-size: clamp(0.8125rem, 3.7vw, 1.05rem);
+    line-height: 1.5;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .c-hero__Para p {
+    margin: 0 0 0.6rem;
+  }
+
+  .product-grid {
+    width: 100%;
+  }
+
+  /* Pager and contact banner stacked tightly at the bottom of the screen. */
+  .mobile_pager {
+    bottom: 4.75rem;
+  }
+
+  .cta_banner {
+    bottom: 0.75rem;
+    transform: translateX(-50%);
+    width: calc(100vw - 1.5rem);
+    max-width: 22rem;
+    height: auto;
+  }
+
+  .cta_banner-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 0.6rem 0.5rem 0.9rem;
+    text-align: left;
+  }
+
+  .cta_banner-info a:not(.cta_banner-glow) {
+    margin: 0;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .cta_banner-glow {
+    position: relative;
+    top: auto;
+    right: auto;
+    flex-shrink: 0;
+  }
+
+  /* The banner already has a WhatsApp button, so the round one would only
+     cover it on a phone. */
+  .whatsapp_float {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 991px) and (orientation: portrait) and (max-height: 600px) {
+  .c-hero__content {
+    top: 4rem;
+  }
+
+  .c-hero__headline {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+  }
+
+  .c-hero__Para {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+}
