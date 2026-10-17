@@ -1429,6 +1429,20 @@ header .header_margin {
   width: 100%;
 }
 
+/* Place each slide side by side before script.js runs, so the slides
+   don't render stacked on top of each other while the page loads. */
+.carousel_slide:nth-child(2) { left: 100%; }
+.carousel_slide:nth-child(3) { left: 200%; }
+.carousel_slide:nth-child(4) { left: 300%; }
+.carousel_slide:nth-child(5) { left: 400%; }
+.carousel_slide:nth-child(6) { left: 500%; }
+.carousel_slide:nth-child(7) { left: 600%; }
+.carousel_slide:nth-child(8) { left: 700%; }
+.carousel_slide:nth-child(9) { left: 800%; }
+.carousel_slide:nth-child(10) { left: 900%; }
+.carousel_slide:nth-child(11) { left: 1000%; }
+.carousel_slide:nth-child(12) { left: 1100%; }
+
 /* hero text*/
 .c-hero {
   height: 100vh;
