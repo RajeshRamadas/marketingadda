@@ -641,6 +641,34 @@ header .header_margin {
   background-color: var(--color-primary);
 }
 
+.sticky-left-nav ul li.nav-active-whatsapp:hover a span,
+.sticky-left-nav ul li.selected-nav-whatsapp a span {
+  width: 8.8rem;
+  opacity: 1;
+  background-color: var(--color-primary);
+}
+
+.sticky-left-nav ul li.nav-active-tryon:hover a span,
+.sticky-left-nav ul li.selected-nav-tryon a span {
+  width: 5.4rem;
+  opacity: 1;
+  background-color: var(--color-primary);
+}
+
+.sticky-left-nav ul li.nav-active-cases:hover a span,
+.sticky-left-nav ul li.selected-nav-cases a span {
+  width: 7rem;
+  opacity: 1;
+  background-color: var(--color-primary);
+}
+
+.sticky-left-nav ul li.nav-active-geo:hover a span,
+.sticky-left-nav ul li.selected-nav-geo a span {
+  width: 5.2rem;
+  opacity: 1;
+  background-color: var(--color-primary);
+}
+
 .sticky-left-nav ul li.nav-active-influencer:hover a span,
 .sticky-left-nav ul li.selected-nav-influencer a span {
   width: 10rem;
@@ -1449,6 +1477,7 @@ header .header_margin {
 .carousel_slide:nth-child(10) { left: 900%; }
 .carousel_slide:nth-child(11) { left: 1000%; }
 .carousel_slide:nth-child(12) { left: 1100%; }
+.carousel_slide:nth-child(13) { left: 1200%; }
 
 /* hero text*/
 .c-hero {
@@ -2326,6 +2355,13 @@ header .header_margin {
   width: 7.6rem;
   opacity: 1;
   background-color: var(--color-primary);
+}
+
+/* Short laptop screens: start the side menu higher so all sections fit. */
+@media only screen and (min-width: 992px) and (max-height: 820px) {
+  .sticky-left-nav {
+    top: 20%;
+  }
 }
 
 /* Our Products: one card per app. Add a card to the .product-grid to show another product. */
