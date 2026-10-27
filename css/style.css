@@ -641,50 +641,35 @@ header .header_margin {
   background-color: var(--color-primary);
 }
 
-.sticky-left-nav ul li.nav-active-about:hover a span {
-  width: 4.6rem;
+.sticky-left-nav ul li.nav-active-whatsapp:hover a span,
+.sticky-left-nav ul li.selected-nav-whatsapp a span {
+  width: 8.9rem;
   opacity: 1;
   background-color: var(--color-primary);
 }
 
-.sticky-left-nav ul li.selected-nav-about a span {
-  width: 4.6rem;
+.sticky-left-nav ul li.nav-active-geo:hover a span,
+.sticky-left-nav ul li.selected-nav-geo a span {
+  width: 5.2rem;
   opacity: 1;
   background-color: var(--color-primary);
 }
 
-.sticky-left-nav ul li.nav-active-app:hover a span {
-  width: 8.4rem;
+.sticky-left-nav ul li.nav-active-influencer:hover a span,
+.sticky-left-nav ul li.selected-nav-influencer a span {
+  width: 10rem;
   opacity: 1;
   background-color: var(--color-primary);
 }
 
-.sticky-left-nav ul li.selected-nav-app a span {
-  width: 8.4rem;
+.sticky-left-nav ul li.nav-active-ai:hover a span {
+  width: 8.3rem;
   opacity: 1;
   background-color: var(--color-primary);
 }
 
-.sticky-left-nav ul li.nav-active-dev:hover a span {
-  width: 9.3rem;
-  opacity: 1;
-  background-color: var(--color-primary);
-}
-
-.sticky-left-nav ul li.selected-nav-dev a span {
-  width: 9.3rem;
-  opacity: 1;
-  background-color: var(--color-primary);
-}
-
-.sticky-left-nav ul li.nav-active-design:hover a span {
-  width: 7.18rem;
-  opacity: 1;
-  background-color: var(--color-primary);
-}
-
-.sticky-left-nav ul li.selected-nav-design a span {
-  width: 7.18rem;
+.sticky-left-nav ul li.selected-nav-ai a span {
+  width: 8.3rem;
   opacity: 1;
   background-color: var(--color-primary);
 }
@@ -702,13 +687,13 @@ header .header_margin {
 }
 
 .sticky-left-nav ul li.nav-active-contact:hover a span {
-  width: 5.6rem;
+  width: 8.4rem;
   opacity: 1;
   background-color: var(--color-primary);
 }
 
 .sticky-left-nav ul li.selected-nav-contact a span {
-  width: 5.6rem;
+  width: 8.4rem;
   opacity: 1;
   background-color: var(--color-primary);
 }
@@ -2155,6 +2140,31 @@ header .header_margin {
 }
 
 /* contact slide */
+/* Call-to-action button at the end of each section; opens WhatsApp with a ready message. */
+.section_cta {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section_cta:hover,
+.section_cta:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(1, 43, 77, 0.2);
+}
+
+.contact_intro {
+  width: auto;
+  max-width: 60ch;
+  font-size: inherit;
+  margin: 0 0 1.25rem;
+}
+
 .contact_grid {
   font-style: normal;
   display: grid;
@@ -2314,9 +2324,9 @@ header .header_margin {
   }
 }
 
-.sticky-left-nav ul li.nav-active-products:hover a span,
-.sticky-left-nav ul li.selected-nav-products a span {
-  width: 7.6rem;
+.sticky-left-nav ul li.nav-active-work:hover a span,
+.sticky-left-nav ul li.selected-nav-work a span {
+  width: 4.9rem;
   opacity: 1;
   background-color: var(--color-primary);
 }
