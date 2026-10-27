@@ -641,6 +641,13 @@ header .header_margin {
   background-color: var(--color-primary);
 }
 
+.sticky-left-nav ul li.nav-active-influencer:hover a span,
+.sticky-left-nav ul li.selected-nav-influencer a span {
+  width: 10rem;
+  opacity: 1;
+  background-color: var(--color-primary);
+}
+
 .sticky-left-nav ul li.nav-active-about:hover a span {
   width: 4.6rem;
   opacity: 1;
