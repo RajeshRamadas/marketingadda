@@ -2,7 +2,7 @@
   --color-primary: #012b4d;
   --color-secondary: #21211a;
   --color-background: #f6f6f6;
-  --color-overlay: rgba(24, 39, 51, 0.85);
+  --color-overlay: rgb(24, 39, 51);
   --menu-speed: 0.75s;
   --text-overlay: #bfdcdf;
   --dot-nav-mask: #4192d4;
@@ -289,9 +289,10 @@ small,
   position: fixed;
   top: 0.625rem;
   right: 1.25rem;
-  z-index: 1;
   padding: 3.75rem 0 0 0;
-  z-index: 1000;
+  /* Above the pager, swipe hint, contact banner and WhatsApp button,
+     so the open menu covers everything. */
+  z-index: 4000;
 }
 
 .menu-wrap .toggler {
@@ -423,8 +424,9 @@ small,
 .menu-wrap .menu > div {
   background: var(--color-overlay);
   border-radius: 50%;
-  width: 200vw;
-  height: 200vw;
+  /* Big enough to cover the corners of tall phone screens too. */
+  width: 300vmax;
+  height: 300vmax;
   display: flex;
   flex: none;
   align-items: center;
@@ -476,7 +478,7 @@ small,
     position: fixed;
     top: 0.625rem;
     right: 1.25rem;
-    z-index: 1000;
+    z-index: 4000;
     padding: 3.75rem 0 0 0;
   }
 
