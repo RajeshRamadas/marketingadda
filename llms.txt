@@ -1,0 +1,24 @@
+# MarketingAdda
+
+> MarketingAdda is a Bangalore agency run by UDO Technologies LLP. We build AI and automation for businesses (AI assistants, workflow automation, smart apps and AI virtual try-on), WhatsApp AI chatbots, and run digital marketing, AI search visibility (GEO) and influencer marketing campaigns.
+
+- Address: 18, Kempanna Layout, Ramachandrapura, Jalahalli Post, Bangalore, Karnataka 560013, India
+- Phone and WhatsApp: +91 81055 68225
+- Email: hello@marketingadda.com
+- Serves: Bangalore and businesses across India
+
+## Services
+
+- [AI & Automation](https://www.marketingadda.com/#ai-automation): AI assistants, workflow automation, smart web and mobile apps, and white-label AI virtual try-on for salons, jewellers, eyewear and fashion brands.
+- [WhatsApp AI Chatbots](https://www.marketingadda.com/#whatsapp-ai-chatbots): chatbots on the official WhatsApp Business API that take orders and payments, book appointments and answer customers in English and Indian languages, with handover to staff and CRM integration.
+- [Digital Marketing](https://www.marketingadda.com/#digital-marketing): SEO, content, social media and paid ads, with tracked results.
+- [AI Search Visibility](https://www.marketingadda.com/#ai-search-visibility): generative engine optimization so businesses are recommended by ChatGPT, Gemini and Google AI Overviews.
+- [Influencer Marketing](https://www.marketingadda.com/#influencer-marketing): creator discovery on Instagram and YouTube, briefs, contracts, approvals, ASCI-compliant disclosures and tracked links and codes.
+
+## Products
+
+- [Beautiva](https://beautiva.marketingadda.com/): our own AI beauty app for iPhone and Android. Try hairstyles, makeup, beards and nail art on your own photo, then book a salon or artist nearby.
+
+## Contact
+
+- [About & Contact](https://www.marketingadda.com/#contact-us)
