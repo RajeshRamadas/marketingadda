@@ -2140,24 +2140,6 @@ header .header_margin {
 }
 
 /* contact slide */
-/* Call-to-action button at the end of each section; opens WhatsApp with a ready message. */
-.section_cta {
-  display: inline-block;
-  padding: 0.6em 1.2em;
-  border-radius: 999px;
-  background: var(--color-primary);
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.section_cta:hover,
-.section_cta:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(1, 43, 77, 0.2);
-}
-
 .contact_intro {
   width: auto;
   max-width: 60ch;
