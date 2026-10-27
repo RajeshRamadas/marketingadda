@@ -41,8 +41,7 @@ if (track) {
     // Section keys, in slide order. They match the nav-active-<key> and
     // selected-nav-<key> classes used by the side menu and hamburger menu.
     const sections = [
-        "ma", "design", "dev", "whatsapp", "app", "tryon", "products",
-        "cases", "digimarket", "geo", "influencer", "about", "contact",
+        "ma", "design", "ai", "whatsapp", "work", "digimarket", "geo", "influencer", "contact",
     ];
     const sideMenuItems = Array.from(document.querySelectorAll(".sticky-left-nav .nav-active"));
     const hamburgerLinks = Array.from(document.querySelectorAll(".menu .menu-nav"));
@@ -114,8 +113,18 @@ if (track) {
     };
 
     // Open the slide named in the URL (for example /#digital-marketing).
+    // Older links to sections that were merged into others.
+    const mergedSections = {
+        "intelligent-automation": "ai-automation",
+        "ai-applications": "ai-automation",
+        "ai-virtual-try-on": "ai-automation",
+        "products": "our-work",
+        "case-studies": "our-work",
+        "about-us": "contact-us",
+    };
     const slideFromHash = () => {
-        const id = decodeURIComponent(location.hash.slice(1));
+        let id = decodeURIComponent(location.hash.slice(1));
+        id = mergedSections[id] || id;
         return id ? slides.findIndex((slide) => slide.id === id) : -1;
     };
 
