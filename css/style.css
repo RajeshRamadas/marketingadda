@@ -674,18 +674,6 @@ header .header_margin {
   background-color: var(--color-primary);
 }
 
-.sticky-left-nav ul li.nav-active-design:hover a span {
-  width: 7.18rem;
-  opacity: 1;
-  background-color: var(--color-primary);
-}
-
-.sticky-left-nav ul li.selected-nav-design a span {
-  width: 7.18rem;
-  opacity: 1;
-  background-color: var(--color-primary);
-}
-
 .sticky-left-nav ul li.nav-active-ma:hover a span {
   width: 7.8rem;
   opacity: 1;
