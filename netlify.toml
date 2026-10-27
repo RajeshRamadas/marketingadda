@@ -46,3 +46,9 @@
   for = "/beautiva/img/*"
   [headers.values]
     Cache-Control = "public, max-age=2592000"
+
+# Plain-text summary of the site for AI assistants.
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
