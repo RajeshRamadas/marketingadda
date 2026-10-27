@@ -41,7 +41,7 @@ if (track) {
     // Section keys, in slide order. They match the nav-active-<key> and
     // selected-nav-<key> classes used by the side menu and hamburger menu.
     const sections = [
-        "ma", "ai", "whatsapp", "work", "digimarket", "geo", "influencer", "contact",
+        "ma", "digimarket", "geo", "influencer", "ai", "whatsapp", "work", "contact",
     ];
     const sideMenuItems = Array.from(document.querySelectorAll(".sticky-left-nav .nav-active"));
     const hamburgerLinks = Array.from(document.querySelectorAll(".menu .menu-nav"));
