@@ -1,0 +1,29 @@
+# Response headers, read by both Cloudflare (Workers static assets) and Netlify.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+# Images and icons rarely change; let browsers keep them for 30 days.
+/images/*
+  Cache-Control: public, max-age=2592000
+
+# CSS and JS filenames are not versioned, so cache them briefly and revalidate.
+/css/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/js/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# Keep the 404 page out of search results (it also has a noindex meta tag).
+/404.html
+  X-Robots-Tag: noindex
+
+# Beautiva product page images.
+/beautiva/img/*
+  Cache-Control: public, max-age=2592000
+
+# Plain-text summary of the site for AI assistants.
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
