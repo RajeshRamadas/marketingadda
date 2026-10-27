@@ -1165,6 +1165,103 @@ header .header_margin {
 
 /*Dot navigation end */
 
+/* Phone pager and swipe hint */
+.mobile_pager,
+.swipe_hint {
+  display: none;
+}
+
+@media only screen and (max-width: 991px) and (orientation: portrait) {
+  .carousel_button {
+    display: none;
+  }
+
+  .mobile_pager {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: fixed;
+    left: 50%;
+    bottom: 11rem;
+    transform: translateX(-50%);
+    z-index: 1000;
+    white-space: nowrap;
+    max-width: calc(100vw - 2rem);
+  }
+
+  .mobile_pager__next {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile_pager button {
+    font-family: inherit;
+    font-size: 0.875rem;
+    color: #fff;
+    background: var(--color-primary);
+    border: 0;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  .mobile_pager__prev {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0 !important;
+  }
+
+  .mobile_pager__prev:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .mobile_pager__count {
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    min-width: 2.5rem;
+    text-align: center;
+  }
+
+  .swipe_hint {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    background: rgba(1, 43, 77, 0.9);
+    color: #fff;
+    font-size: 0.95rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  .swipe_hint.is-visible {
+    opacity: 1;
+  }
+
+  .carousel_track.is-nudging {
+    animation: swipe-nudge 1.2s ease-in-out;
+  }
+}
+
+@keyframes swipe-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  35%,
+  55% {
+    transform: translateX(-18%);
+  }
+}
+
 .carousel {
   position: absolute;
   height: 68vh;
@@ -1331,6 +1428,20 @@ header .header_margin {
   bottom: 0;
   width: 100%;
 }
+
+/* Place each slide side by side before script.js runs, so the slides
+   don't render stacked on top of each other while the page loads. */
+.carousel_slide:nth-child(2) { left: 100%; }
+.carousel_slide:nth-child(3) { left: 200%; }
+.carousel_slide:nth-child(4) { left: 300%; }
+.carousel_slide:nth-child(5) { left: 400%; }
+.carousel_slide:nth-child(6) { left: 500%; }
+.carousel_slide:nth-child(7) { left: 600%; }
+.carousel_slide:nth-child(8) { left: 700%; }
+.carousel_slide:nth-child(9) { left: 800%; }
+.carousel_slide:nth-child(10) { left: 900%; }
+.carousel_slide:nth-child(11) { left: 1000%; }
+.carousel_slide:nth-child(12) { left: 1100%; }
 
 /* hero text*/
 .c-hero {
@@ -2200,5 +2311,225 @@ header .header_margin {
   .cursor2,
   .cursor3 {
     transition: none;
+  }
+}
+
+.sticky-left-nav ul li.nav-active-products:hover a span,
+.sticky-left-nav ul li.selected-nav-products a span {
+  width: 7.6rem;
+  opacity: 1;
+  background-color: var(--color-primary);
+}
+
+/* Our Products: one card per app. Add a card to the .product-grid to show another product. */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  width: 80%;
+  margin-top: 4vh;
+}
+
+.product-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem;
+  border: 1px solid rgba(1, 43, 77, 0.18);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.product-card:hover,
+a.product-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(1, 43, 77, 0.14);
+}
+
+.product-card__icon {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+}
+
+.product-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.product-card__name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.product-card__text {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  opacity: 0.8;
+}
+
+.product-card__tags {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.product-card__more {
+  margin-top: 0.25rem;
+  font-weight: 600;
+}
+
+.product-card--soon {
+  background: transparent;
+  border-style: dashed;
+}
+
+@media screen and (max-width: 991px) {
+  .product-grid {
+    width: 85%;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-top: 2vh;
+  }
+
+  .product-card {
+    padding: 0.9rem;
+  }
+
+  .product-card__text {
+    font-size: 0.85rem;
+  }
+
+  /* No room for the placeholder under a real card on a phone. */
+  .product-card--soon {
+    display: none;
+  }
+}
+
+/* Portrait phones and tablets: the section text sits in a box between the
+   header and the pager, sized from the screen, and scrolls inside that box
+   if a section is longer than the screen, so nothing is cut off or covered. */
+@media only screen and (max-width: 991px) and (orientation: portrait) {
+  .carousel,
+  .c-hero {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .c-hero__content {
+    position: absolute;
+    top: 4.5rem;
+    bottom: 8.25rem;
+    left: 7vw;
+    right: 7vw;
+    max-width: none;
+    margin: 0;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Centre short sections; long ones start at the top and scroll. */
+  .c-hero__content > :first-child {
+    margin-top: auto;
+  }
+
+  .c-hero__content > :last-child {
+    margin-bottom: auto;
+  }
+
+  .c-hero__headline {
+    font-size: clamp(1.5rem, 7.5vw, 2.5rem);
+    line-height: 1.1;
+    overflow-wrap: break-word;
+  }
+
+  .c-hero__subheadline {
+    font-size: clamp(0.75rem, 3.5vw, 1.05rem);
+    width: 100%;
+    padding-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .c-hero__Para {
+    font-size: clamp(0.8125rem, 3.7vw, 1.05rem);
+    line-height: 1.5;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .c-hero__Para p {
+    margin: 0 0 0.6rem;
+  }
+
+  .product-grid {
+    width: 100%;
+  }
+
+  /* Pager and contact banner stacked tightly at the bottom of the screen. */
+  .mobile_pager {
+    bottom: 4.75rem;
+  }
+
+  .cta_banner {
+    bottom: 0.75rem;
+    transform: translateX(-50%);
+    width: calc(100vw - 1.5rem);
+    max-width: 22rem;
+    height: auto;
+  }
+
+  .cta_banner-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 0.6rem 0.5rem 0.9rem;
+    text-align: left;
+  }
+
+  .cta_banner-info a:not(.cta_banner-glow) {
+    margin: 0;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .cta_banner-glow {
+    position: relative;
+    top: auto;
+    right: auto;
+    flex-shrink: 0;
+  }
+
+  /* The banner already has a WhatsApp button, so the round one would only
+     cover it on a phone. */
+  .whatsapp_float {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 991px) and (orientation: portrait) and (max-height: 600px) {
+  .c-hero__content {
+    top: 4rem;
+  }
+
+  .c-hero__headline {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+  }
+
+  .c-hero__Para {
+    font-size: 0.8125rem;
+    line-height: 1.4;
   }
 }

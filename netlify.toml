@@ -1,0 +1,13 @@
+# Netlify config. Response headers live in _headers (Netlify and Cloudflare both read it).
+#
+# No host redirect here on purpose: a forced marketingadda.com -> www rule
+# loops with Netlify's own primary-domain redirect when the bare domain is
+# primary. Set the canonical host in the hosting dashboard instead.
+
+# Beautiva product page (beautiva/). beautiva.marketingadda.com is a domain alias of this site; this rewrite
+# serves the beautiva/ folder at its root. marketingadda.com/beautiva/ shows the same page.
+[[redirects]]
+  from = "https://beautiva.marketingadda.com/*"
+  to = "/beautiva/:splat"
+  status = 200
+  force = true

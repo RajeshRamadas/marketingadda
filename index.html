@@ -156,7 +156,7 @@
             "email": "hello@marketingadda.com",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "18, Kempanna Layout, Ramachandrapura, Jalahalli Post, Jalahalli",
+              "streetAddress": "18, Kempanna Layout, Ramachandrapura, Jalahalli Post",
               "addressLocality": "Bangalore",
               "addressRegion": "Karnataka",
               "postalCode": "560013",
@@ -237,7 +237,7 @@
       href="https://fonts.googleapis.com/css?family=Prompt:400|Play:700&display=swap"
     />
     <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.css?v=2026-10-18" />
   </head>
   <body class="bg_logo" id="bg_logo">
     <header class="preloader-header">
@@ -522,6 +522,10 @@
                     >
                   </li>
                   <li>
+                    <a href="#products" class="menu-nav nav-active-products"
+                      ><span>Our Products</span></a>
+                  </li>
+                  <li>
                     <a
                       href="#digital-marketing"
                       class="menu-nav nav-active-digimarket"
@@ -582,6 +586,9 @@
               </li>
               <li class="nav-active nav-active-app">
                 <a href="#ai-applications" class="hover-target"> <span>AI Applications</span></a>
+              </li>
+              <li class="nav-active nav-active-products">
+                <a href="#products" class="hover-target"> <span>Our Products</span></a>
               </li>
               <li class="nav-active nav-active-digimarket">
                 <a href="#digital-marketing" class="hover-target">
@@ -685,6 +692,35 @@
                 </div>
               </div>
             </li>
+            <li class="carousel_slide" id="products">
+              <div class="c-hero">
+                <div class="c-hero__content">
+                  <h2 class="c-hero__headline reveal-text">
+                    <span>Our<br />Products</span>
+                  </h2>
+                  <h3 class="c-hero__subheadline reveal-text">
+                    <span>APPS BUILT AND RUN BY UDO TECHNOLOGIES</span>
+                  </h3>
+                  <div class="product-grid">
+                    <a class="product-card hover-target" href="/beautiva/">
+                      <img class="product-card__icon" src="./beautiva/apple-touch-icon.png" width="56" height="56" alt="" />
+                      <span class="product-card__body">
+                        <span class="product-card__name">Beautiva</span>
+                        <span class="product-card__text">Try hairstyles, makeup, beards and nail art on your own photo with AI, then book a salon or artist near you.</span>
+                        <span class="product-card__tags">iPhone · Android · AI</span>
+                        <span class="product-card__more">View product →</span>
+                      </span>
+                    </a>
+                    <div class="product-card product-card--soon">
+                      <span class="product-card__body">
+                        <span class="product-card__name">More apps coming soon</span>
+                        <span class="product-card__text">We are building more AI products. Check back here for what is next.</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
             <li class="carousel_slide" id="digital-marketing">
               <div class="c-hero">
                 <div class="c-hero__content">
@@ -741,7 +777,7 @@
                       <div class="contact_item contact_item--address">
                         <span class="contact_label">Address</span>
                         18, Kempanna Layout, Ramachandrapura,<br />
-                        Jalahalli Post, Jalahalli, Bangalore North,<br />
+                        Jalahalli Post,<br />
                         Bangalore, Karnataka, India - 560013
                       </div>
                       <div class="contact_item">
@@ -775,7 +811,17 @@
           <button class="carousel__indicator"></button>
           <button class="carousel__indicator"></button>
           <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
         </div>
+
+        <div class="mobile_pager" role="navigation" aria-label="Sections">
+          <button type="button" class="mobile_pager__prev" aria-label="Previous section" disabled>
+            &larr;
+          </button>
+          <span class="mobile_pager__count" aria-live="polite">1 / 8</span>
+          <button type="button" class="mobile_pager__next">Next &rarr;</button>
+        </div>
+        <div class="swipe_hint" aria-hidden="true">Swipe for more &rarr;</div>
 
         <div class="modal" id="modal">
           <div class="close"><span class="close" id="close">&times;</span></div>
@@ -975,7 +1021,7 @@
       </section>
     </footer>
 
-    <script src="./js/script.js" defer></script>
+    <script src="./js/script.js?v=2026-10-18" defer></script>
     <a
       class="whatsapp_float"
       href="https://wa.me/918105568225?text=Hi%20MarketingAdda%2C%20I%27d%20like%20to%20discuss%20a%20project."

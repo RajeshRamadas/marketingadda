@@ -40,12 +40,29 @@ if (track) {
 
     // Section keys, in slide order. They match the nav-active-<key> and
     // selected-nav-<key> classes used by the side menu and hamburger menu.
-    const sections = ["ma", "design", "dev", "app", "digimarket", "about", "contact"];
+    const sections = ["ma", "design", "dev", "app", "products", "digimarket", "about", "contact"];
     const sideMenuItems = Array.from(document.querySelectorAll(".sticky-left-nav .nav-active"));
     const hamburgerLinks = Array.from(document.querySelectorAll(".menu .menu-nav"));
     const menuToggle = document.getElementById("toggle-checkbox");
 
     let currentIndex = 0;
+
+    // Phone pager: "Next: <section> →" button and an "n / total" counter.
+    const pagerPrev = document.querySelector(".mobile_pager__prev");
+    const pagerNext = document.querySelector(".mobile_pager__next");
+    const pagerCount = document.querySelector(".mobile_pager__count");
+    const slideTitle = (slide) => {
+        const heading = slide.querySelector(".c-hero__headline");
+        return heading ? (heading.innerText || heading.textContent).replace(/\s+/g, " ").trim() : "";
+    };
+
+    function updatePager() {
+        if (!pagerNext) return;
+        const isLast = currentIndex === slides.length - 1;
+        pagerNext.textContent = isLast ? "Back to start ↺" : "Next: " + slideTitle(slides[currentIndex + 1]) + " →";
+        if (pagerPrev) pagerPrev.disabled = currentIndex === 0;
+        if (pagerCount) pagerCount.textContent = currentIndex + 1 + " / " + slides.length;
+    }
 
     // Percent-based positions stay correct when the window is resized or rotated.
     slides.forEach((slide, index) => {
@@ -58,7 +75,12 @@ if (track) {
         const currentSlide = slides[currentIndex];
         const targetSlide = slides[targetIndex];
 
+        track.classList.remove("is-nudging");
         track.style.transform = "translateX(-" + targetIndex * 100 + "%)";
+        // Open each section at its top, even if it was scrolled last time.
+        const targetContent = targetSlide.querySelector(".c-hero__content");
+        if (targetContent) targetContent.scrollTop = 0;
+
         currentSlide.classList.remove("current-slide");
         targetSlide.classList.add("current-slide");
 
@@ -79,6 +101,7 @@ if (track) {
         if (nextButton) nextButton.classList.toggle("is-hidden", targetIndex === slides.length - 1);
 
         currentIndex = targetIndex;
+        updatePager();
 
         // Keep the address bar in step so each section can be linked and shared.
         if (window.history && history.replaceState) {
@@ -116,6 +139,45 @@ if (track) {
         resetContainerScroll();
     });
 
+    if (pagerNext) {
+        pagerNext.addEventListener("click", () =>
+            goToSlide(currentIndex === slides.length - 1 ? 0 : currentIndex + 1)
+        );
+    }
+    if (pagerPrev) pagerPrev.addEventListener("click", () => goToSlide(currentIndex - 1));
+    updatePager();
+
+    // First visit on a phone: nudge the slide and show "Swipe for more" once.
+    const swipeHint = document.querySelector(".swipe_hint");
+    const phonePortrait = window.matchMedia("(max-width: 991px) and (orientation: portrait)");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let hintSeen = false;
+    try {
+        hintSeen = localStorage.getItem("swipeHintSeen") === "1";
+    } catch (err) {
+        hintSeen = false;
+    }
+    const showSwipeHint = () => {
+        if (hintSeen || currentIndex !== 0 || !phonePortrait.matches) return;
+        hintSeen = true;
+        swipeHint.classList.add("is-visible");
+        track.classList.add("is-nudging");
+        setTimeout(() => track.classList.remove("is-nudging"), 1200);
+        setTimeout(() => swipeHint.classList.remove("is-visible"), 3000);
+        try {
+            localStorage.setItem("swipeHintSeen", "1");
+        } catch (err) {
+            // Private mode or blocked storage: the hint may show again next time.
+        }
+    };
+    if (swipeHint && !reducedMotion && !hintSeen) {
+        setTimeout(showSwipeHint, 1500);
+        // A phone turned to portrait later still gets the hint.
+        if (phonePortrait.addEventListener) {
+            phonePortrait.addEventListener("change", () => setTimeout(showSwipeHint, 600));
+        }
+    }
+
     if (nextButton) nextButton.addEventListener("click", () => goToSlide(currentIndex + 1));
     if (prevButton) prevButton.addEventListener("click", () => goToSlide(currentIndex - 1));
 
@@ -147,6 +209,13 @@ if (track) {
         "wheel",
         (e) => {
             if (wheelLocked || Math.abs(e.deltaY) < 10) return;
+            // Let a long section scroll its own text before the wheel changes section.
+            const box = e.target.closest && e.target.closest(".c-hero__content");
+            if (box && box.scrollHeight > box.clientHeight + 1) {
+                const atTop = box.scrollTop <= 0;
+                const atBottom = box.scrollTop + box.clientHeight >= box.scrollHeight - 1;
+                if ((e.deltaY > 0 && !atBottom) || (e.deltaY < 0 && !atTop)) return;
+            }
             wheelLocked = true;
             setTimeout(() => {
                 wheelLocked = false;
