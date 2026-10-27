@@ -1,11 +1,11 @@
 # MarketingAdda
 
-> MarketingAdda is a Bangalore agency run by UDO Technologies LLP. We build AI and automation for businesses (AI assistants, workflow automation, smart apps and AI virtual try-on), WhatsApp AI chatbots, and run digital marketing, AI search visibility (GEO) and influencer marketing campaigns.
+> MarketingAdda is a Bangalore-based agency serving clients worldwide, run by UDO Technologies LLP. We build AI and automation for businesses (AI assistants, workflow automation, smart apps and AI virtual try-on), WhatsApp AI chatbots, and run digital marketing, AI search visibility (GEO) and influencer marketing campaigns.
 
 - Address: 18, Kempanna Layout, Ramachandrapura, Jalahalli Post, Bangalore, Karnataka 560013, India
 - Phone and WhatsApp: +91 81055 68225
 - Email: hello@marketingadda.com
-- Serves: Bangalore and businesses across India
+- Serves: clients in India and worldwide (remote delivery)
 
 ## Services
 
