@@ -609,6 +609,9 @@ header .header_margin {
 
 .sticky-left-nav ul li a span {
   display: block;
+  /* Keep each label on one line; the underline widths below are tuned
+     to the text and are too tight if a browser renders the font wider. */
+  white-space: nowrap;
   color: var(--color-primary);
   opacity: 0.6;
   padding-top: 0.3125rem;
