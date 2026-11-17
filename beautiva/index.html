@@ -536,7 +536,8 @@
   } catch (e) { /* keep US dollars */ }
   /* Launch offer: on each AI pack/plan card, "N% off" and the "was" price struck through above the real price.
      The server's PRICE_DISCOUNT_PERCENT (client-config) wins, so the page always matches the app; links.js is the
-     fallback while the server can't be reached. The "was" price is rounded up, so the discount is never overstated. */
+     fallback while the server can't be reached. The "was" price is rounded up to
+     a real-looking price ending in 9 (₹339, $4.69), so the discount is never overstated. */
   (function () {
     function show(pct) {
       var d = Math.round(Number(pct) || 0);
@@ -547,7 +548,8 @@
         var m = span && span.textContent.match(/^(\D*)([\d.,]+)(.*)$/);
         if (!m) return;
         var v = parseFloat(m[2].replace(/,/g, '')) / (1 - d / 100);
-        var was = m[1] + (m[1] === '\u20b9' ? String(Math.ceil(v - 1e-9)) : (Math.ceil(v * 100 - 1e-6) / 100).toFixed(2)) + m[3];
+        var up9 = function (n) { return n + (19 - n % 10) % 10; };  // ends in 9, like a real price tag
+        var was = m[1] + (m[1] === '\u20b9' ? String(up9(Math.ceil(v - 1e-9))) : (up9(Math.ceil(v * 100 - 1e-6)) / 100).toFixed(2)) + m[3];
         var off = document.createElement('span'); off.className = 'off'; off.textContent = d + '% off';
         var s = document.createElement('s'); s.className = 'was'; s.textContent = was; s.setAttribute('aria-label', 'was ' + was);
         card.querySelector('h3').after(off);
