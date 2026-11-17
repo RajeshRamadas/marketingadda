@@ -7,5 +7,5 @@ window.BEAUTIVA_LINKS = {
 
 // Launch offer on the AI pack and plan price cards: a "25% off" badge and a struck-through "was" price
 // (price / (1 - percent), so the badge is true). Display only: the stores charge the price shown. 0 = off.
-// Keep it the same as PRICE_DISCOUNT_PERCENT on the server (the app's "Get more styles" sheet).
+// Fallback only: the page uses PRICE_DISCOUNT_PERCENT from the server (api.beautiva.marketingadda.com) when it can.
 window.BEAUTIVA_DISCOUNT_PERCENT = 25;

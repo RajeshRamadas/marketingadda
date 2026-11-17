@@ -534,21 +534,32 @@
       document.querySelectorAll('[data-inr]').forEach(function (el) { el.textContent = el.getAttribute('data-inr'); });
     }
   } catch (e) { /* keep US dollars */ }
-  /* Launch offer: on each AI pack/plan card, "N% off" and the "was" price struck through above the real price. */
+  /* Launch offer: on each AI pack/plan card, "N% off" and the "was" price struck through above the real price.
+     The server's PRICE_DISCOUNT_PERCENT (client-config) wins, so the page always matches the app; links.js is the
+     fallback while the server can't be reached. The "was" price is rounded up, so the discount is never overstated. */
   (function () {
-    var d = Math.round(Number(window.BEAUTIVA_DISCOUNT_PERCENT) || 0);
-    if (!(d > 0 && d < 100)) return;
-    document.querySelectorAll('.price[data-offer]').forEach(function (card) {
-      var amt = card.querySelector('.amt'), span = amt && amt.querySelector('span');
-      var m = span && span.textContent.match(/^(\D*)([\d.,]+)(.*)$/);
-      if (!m) return;
-      var v = parseFloat(m[2].replace(/,/g, '')) / (1 - d / 100);
-      var was = m[1] + (m[1] === '\u20b9' ? String(Math.round(v)) : (Math.round(v * 10) / 10 - 0.01).toFixed(2)) + m[3];
-      var off = document.createElement('span'); off.className = 'off'; off.textContent = d + '% off';
-      var s = document.createElement('s'); s.className = 'was'; s.textContent = was; s.setAttribute('aria-label', 'was ' + was);
-      card.querySelector('h3').after(off);
-      amt.before(s);
-    });
+    function show(pct) {
+      var d = Math.round(Number(pct) || 0);
+      document.querySelectorAll('.price[data-offer]').forEach(function (card) {
+        card.querySelectorAll('.off, .was').forEach(function (e) { e.remove(); });
+        if (!(d > 0 && d < 100)) return;
+        var amt = card.querySelector('.amt'), span = amt && amt.querySelector('span');
+        var m = span && span.textContent.match(/^(\D*)([\d.,]+)(.*)$/);
+        if (!m) return;
+        var v = parseFloat(m[2].replace(/,/g, '')) / (1 - d / 100);
+        var was = m[1] + (m[1] === '\u20b9' ? String(Math.ceil(v - 1e-9)) : (Math.ceil(v * 100 - 1e-6) / 100).toFixed(2)) + m[3];
+        var off = document.createElement('span'); off.className = 'off'; off.textContent = d + '% off';
+        var s = document.createElement('s'); s.className = 'was'; s.textContent = was; s.setAttribute('aria-label', 'was ' + was);
+        card.querySelector('h3').after(off);
+        amt.before(s);
+      });
+    }
+    show(window.BEAUTIVA_DISCOUNT_PERCENT);
+    if (window.fetch) {
+      fetch('https://api.beautiva.marketingadda.com/api/v1/client-config').then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (c) { if (c && c.pricing && c.pricing.discount_percent != null) show(c.pricing.discount_percent); })
+        .catch(function () { /* keep links.js */ });
+    }
   })();
 </script>
 <script>
