@@ -543,8 +543,12 @@
   (function () {
     function show(pct, ends) {
       var d = Math.round(Number(pct) || 0);
-      var end = ends ? new Date(ends + 'T23:59:59+05:30') : null;
-      if (!end || isNaN(end) || end < new Date()) d = 0;  // never a struck price without a live end date
+      // The last day, India time; an impossible date (31 Feb) counts as none.
+      var ok = /^\d{4}-\d{2}-\d{2}$/.test(ends || '') && new Date(ends + 'T00:00:00Z').toISOString().slice(0, 10) === ends;
+      var end = ok ? new Date(ends + 'T23:59:59+05:30') : null;
+      if (!end || end < new Date()) d = 0;  // never a struck price without a live end date
+      clearTimeout(show.timer);
+      if (d && end - new Date() < 2147483647) show.timer = setTimeout(function () { show(0); }, end - new Date() + 1000);
       var note = document.getElementById('offer-note');
       if (note) {
         note.hidden = !(d > 0 && d < 100);
@@ -571,7 +575,10 @@
     show(window.BEAUTIVA_DISCOUNT_PERCENT, window.BEAUTIVA_OFFER_ENDS);
     if (window.fetch) {
       fetch('https://api.beautiva.marketingadda.com/api/v1/client-config').then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (c) { if (c && c.pricing && c.pricing.discount_percent != null) show(c.pricing.discount_percent, c.pricing.offer_ends); })
+        .then(function (c) { if (c && c.pricing && c.pricing.discount_percent != null) {
+          // A server from before offer_ends existed: keep the links.js date. null means the server ended the offer.
+          show(c.pricing.discount_percent, 'offer_ends' in c.pricing ? c.pricing.offer_ends : window.BEAUTIVA_OFFER_ENDS);
+        } })
         .catch(function () { /* keep links.js */ });
     }
   })();
