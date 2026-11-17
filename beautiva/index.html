@@ -140,6 +140,10 @@
     .price h3 { font-size: 16px; color: var(--text2); font-family: 'Manrope', sans-serif; font-weight: 700; }
     .price .amt { font: 600 36px 'Sora', sans-serif; margin: 8px 0 2px; }
     .price .amt small { font-size: 15px; color: var(--text2); font-weight: 500; }
+    /* Launch offer (BEAUTIVA_DISCOUNT_PERCENT in links.js): "25% off" pill and the struck "was" price. */
+    .price .off { align-self: flex-start; background: #1f9d55; color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; margin-top: 10px; }
+    .price .was { display: block; font: 600 16px 'Manrope', sans-serif; color: var(--text2); text-decoration: line-through; margin-top: 6px; }
+    .price .was + .amt { margin-top: 0; }
     .price p { color: var(--text2); font-size: 14px; }
     .note { color: var(--text2); font-size: 14px; margin-top: 22px; text-align: center; }
 
@@ -443,9 +447,9 @@
       <p class="lead">Browsing styles, face analysis, makeup guides and booking are free. The live mirrors are free for your first month. Each AI try-on uses one style credit, and so does each side or back view or a Photo-real picture from the mirror.</p>
       <div class="prices" style="text-align:left">
         <div class="price"><h3>Live mirrors</h3><div class="amt"><span data-inr="₹49">$0.99</span><small> / month</small></div><p>Every live mirror: makeup, hair colour, lenses, glasses and nails. Free for your first month, then monthly. Cancel any time.</p></div>
-        <div class="price"><h3>Basic pack</h3><div class="amt"><span data-inr="₹49">$0.99</span></div><p>6 style credits. Use them whenever you like.</p></div>
-        <div class="price"><h3>Value pack</h3><div class="amt"><span data-inr="₹249">$2.99</span></div><p>30 style credits. Use them whenever you like.</p></div>
-        <div class="price best"><span class="badge">Best for regulars</span><h3>Monthly plan</h3><div class="amt"><span data-inr="₹299">$3.49</span><small> / month</small></div><p>40 style credits every month, and every live mirror included. Unused credits roll over. Cancel any time.</p></div>
+        <div data-offer class="price"><h3>Basic pack</h3><div class="amt"><span data-inr="₹49">$0.99</span></div><p>6 style credits. Use them whenever you like.</p></div>
+        <div data-offer class="price"><h3>Value pack</h3><div class="amt"><span data-inr="₹249">$2.99</span></div><p>30 style credits. Use them whenever you like.</p></div>
+        <div data-offer class="price best"><span class="badge">Best for regulars</span><h3>Monthly plan</h3><div class="amt"><span data-inr="₹299">$3.49</span><small> / month</small></div><p>40 style credits every month, and every live mirror included. Unused credits roll over. Cancel any time.</p></div>
       </div>
       <p class="note">Getting married? The Bridal pack has 40 style credits for <span data-inr="₹299">$3.99</span>, for haldi, mehendi, sangeet and reception looks.</p>
       <p class="note"><span data-inr="Prices shown in Indian rupees.">Prices shown in US dollars. The App Store and Google Play show the price in your local currency.</span> If a try-on fails, the credit is given back. Pack credits never expire. If you cancel a monthly plan, it keeps working until the date it would have renewed.</p>
@@ -530,6 +534,22 @@
       document.querySelectorAll('[data-inr]').forEach(function (el) { el.textContent = el.getAttribute('data-inr'); });
     }
   } catch (e) { /* keep US dollars */ }
+  /* Launch offer: on each AI pack/plan card, "N% off" and the "was" price struck through above the real price. */
+  (function () {
+    var d = Math.round(Number(window.BEAUTIVA_DISCOUNT_PERCENT) || 0);
+    if (!(d > 0 && d < 100)) return;
+    document.querySelectorAll('.price[data-offer]').forEach(function (card) {
+      var amt = card.querySelector('.amt'), span = amt && amt.querySelector('span');
+      var m = span && span.textContent.match(/^(\D*)([\d.,]+)(.*)$/);
+      if (!m) return;
+      var v = parseFloat(m[2].replace(/,/g, '')) / (1 - d / 100);
+      var was = m[1] + (m[1] === '\u20b9' ? String(Math.round(v)) : (Math.round(v * 10) / 10 - 0.01).toFixed(2)) + m[3];
+      var off = document.createElement('span'); off.className = 'off'; off.textContent = d + '% off';
+      var s = document.createElement('s'); s.className = 'was'; s.textContent = was; s.setAttribute('aria-label', 'was ' + was);
+      card.querySelector('h3').after(off);
+      amt.before(s);
+    });
+  })();
 </script>
 <script>
   // Point every store button at its link from links.js, or mark it "Coming soon" while the link is empty.
