@@ -254,10 +254,10 @@
         <h2>Everything to run your bookings</h2>
         <p class="lead" style="margin-top:14px">Bookings and chat are free. Quotes, offers and home visits come with Premium.</p>
         <ul class="ticks">
-          <li><b>Bookings with no commission:</b> requests, a day, week and month calendar, walk-ins, home visits and reminders for you and the customer.</li>
+          <li><b>Bookings with no commission:</b> requests, a day, week and month calendar, walk-ins and reminders, plus home visits with Premium for you and the customer.</li>
           <li><b>Show a customer a look:</b> staff try colour or bridal on a walk-in's photo before they decide.</li>
-          <li><b>Stylist card and quote:</b> the look, salon notes, front, side and back views, and the price agreed before the visit.</li>
-          <li><b>Offers near you:</b> your offers alerted to opted-in customers within 5 km.</li>
+          <li><b>Stylist card and quote</b> <span class="gold">(quote with Premium)</span><b>:</b> the look, salon notes, front, side and back views, and the price agreed before the visit.</li>
+          <li><b>Offers near you</b> <span class="gold">(Premium)</span><b>:</b> your offers alerted to opted-in customers within 5 km.</li>
           <li><b>Your own invite code:</b> a QR standee at the desk; every customer who joins with it is counted to you.</li>
           <li><b>AI skin and hair checks:</b> lead customers to facials, peels and scalp treatments.</li>
           <li><b>Quick setup:</b> snap your price list and AI fills in your services and prices.</li>
@@ -386,9 +386,9 @@
         <div class="f full"><label for="msg">Anything to add? <small>(optional)</small></label><textarea id="msg" name="msg" placeholder="Best time to call, services you want more bookings for, questions"></textarea></div>
         <p class="err" id="err" hidden></p>
         <div class="send">
-          <button class="btn" type="submit">Send on WhatsApp</button>
+          <button class="btn" type="button" id="send-wa">Send on WhatsApp</button>
           <a class="btn btn-o" id="send-mail" href="mailto:hello@marketingadda.com">Send by email</a>
-          <p>Opens WhatsApp or your email with your details filled in. Nothing is sent until you press send there.</p>
+          <p>Opens WhatsApp or your email with these details filled in, so WhatsApp or your email app sees them. Check the message and press send there.</p>
         </div>
       </form>
     </div>
@@ -413,29 +413,35 @@
     var f = document.getElementById('enquiry'), who = document.getElementById('who-sel');
     var err = document.getElementById('err'), mail = document.getElementById('send-mail');
     var val = function (id) { return document.getElementById(id).value.trim(); };
+    var chain = function () { return who.value === 'Salon chain'; };
     function text() {
       var lines = ['Hi Beautiva, I would like to know about the business opportunity.', '',
         'I am: ' + who.value, 'Name: ' + val('name'), 'Business: ' + val('biz'), 'City: ' + val('city')];
-      if (val('branches')) lines.push('Branches: ' + val('branches'));
+      if (chain() && val('branches')) lines.push('Branches: ' + val('branches'));
       if (val('msg')) lines.push('', val('msg'));
       return lines.join('\n');
     }
     function ok() {
       var miss = ['name', 'biz', 'city'].filter(function (id) { return !val(id); });
-      err.hidden = !miss.length;
+      var b = val('branches'), badB = chain() && b !== '' && !(/^\d+$/.test(b) && Number(b) >= 1);
+      err.hidden = !miss.length && !badB;
       if (miss.length) { err.textContent = 'Please add your name, business name and city.'; document.getElementById(miss[0]).focus(); }
-      return !miss.length;
+      else if (badB) { err.textContent = 'Branches should be a whole number, 1 or more.'; document.getElementById('branches').focus(); }
+      return err.hidden;
     }
     function sync() {
-      var chain = who.value === 'Salon chain';
-      document.getElementById('branches-f').style.display = chain ? '' : 'none';
+      document.getElementById('branches-f').style.display = chain() ? '' : 'none';
       mail.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('Beautiva business: ' + (val('biz') || who.value)) + '&body=' + encodeURIComponent(text());
     }
     f.addEventListener('input', sync);
     f.addEventListener('change', sync);
-    f.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (ok()) window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(text()), '_blank', 'noopener');
+    // A plain button, not a submit, so the details never go into this page's URL if the script doesn't run.
+    f.addEventListener('submit', function (e) { e.preventDefault(); });
+    var busy = false;
+    document.getElementById('send-wa').addEventListener('click', function () {
+      if (busy || !ok()) return;
+      busy = true; setTimeout(function () { busy = false; }, 3000);  // a double tap opens one chat, not two
+      window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(text()), '_blank', 'noopener');
     });
     mail.addEventListener('click', function (e) { if (!ok()) e.preventDefault(); });
     // Buttons such as "Ask for a chain pilot" pre-pick who is asking.
