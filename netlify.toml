@@ -6,6 +6,14 @@
 
 # Beautiva product page (beautiva/). beautiva.marketingadda.com is a domain alias of this site; this rewrite
 # serves the beautiva/ folder at its root. marketingadda.com/beautiva/ shows the same page.
+# Business opportunity page (beautiva/business.html) at beautiva.marketingadda.com/business. Listed first so it wins
+# over the catch-all below; marketingadda.com/beautiva/business works without it.
+[[redirects]]
+  from = "https://beautiva.marketingadda.com/business"
+  to = "/beautiva/business.html"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "https://beautiva.marketingadda.com/*"
   to = "/beautiva/:splat"

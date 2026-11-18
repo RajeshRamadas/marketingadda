@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beautiva for Business: grow your salon, studio or salon chain with AI try-on</title>
+  <meta name="description" content="Partner with Beautiva, the AI-powered beauty app. Customers try the look on their own photo, then book your salon or studio with it attached. Free listing, no commission on bookings, and a free 60-day pilot for salon chains.">
+  <meta name="theme-color" content="#0C0C0C">
+  <meta property="og:title" content="Beautiva for Business: customers who book with the look already chosen">
+  <meta property="og:description" content="For salons, makeup artists and salon chains. Free listing, no commission, one head office screen for every branch, and a free 60-day pilot.">
+  <meta property="og:image" content="https://beautiva.marketingadda.com/img/biz-head-office.webp">
+  <meta property="og:url" content="https://beautiva.marketingadda.com/business">
+  <link rel="canonical" href="https://beautiva.marketingadda.com/business">
+  <link rel="icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Same look as the product page (index.html). */
+    :root { --bg: #0C0C0C; --surface: #161513; --surface2: #1E1C19; --border: #2A2824; --text: #F5F1EA; --text2: #A39E95; --accent: #D9B66F; --accent2: #F0D9A2; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font: 16px/1.6 'Manrope', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    h1, h2, h3 { font-family: 'Sora', sans-serif; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+    h2 { font-size: clamp(26px, 4vw, 38px); }
+    h3 { font-size: 18px; }
+    .gold { color: var(--accent); }
+    .eyebrow { color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+    .lead { color: var(--text2); font-size: 17px; max-width: 640px; }
+    section { padding: 88px 0; }
+    .center { text-align: center; }
+    .center .lead { margin: 14px auto 0; }
+    .alt { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    /* Nav */
+    header { position: sticky; top: 0; z-index: 10; background: rgba(12,12,12,.86); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+    .brand { font: 700 20px 'Sora', sans-serif; letter-spacing: .06em; text-decoration: none; white-space: nowrap; }
+    .brand span { color: var(--accent); }
+    .brand em { font: 600 13px 'Manrope', sans-serif; letter-spacing: .02em; color: var(--text2); font-style: normal; margin-left: 8px; }
+    nav { display: flex; gap: 28px; font-size: 15px; }
+    nav a { color: var(--text2); text-decoration: none; }
+    nav a:hover { color: var(--text); }
+    .btn { display: inline-block; background: var(--accent); color: #141210; font-weight: 700; font-size: 15px; padding: 10px 18px; border-radius: 999px; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; }
+    .btn:hover { background: var(--accent2); }
+    .btn-o { background: transparent; color: var(--text); box-shadow: inset 0 0 0 1px #5A554C; }
+    .btn-o:hover { background: transparent; box-shadow: inset 0 0 0 1px var(--accent); }
+    .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .btns .btn { padding: 13px 22px; font-size: 16px; }
+
+    /* Hero */
+    .hero { padding: 64px 0 80px; background: radial-gradient(900px 500px at 80% 10%, rgba(217,182,111,.14), transparent 60%); }
+    .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: clamp(34px, 5.2vw, 56px); }
+    .hero .lead { margin-top: 18px; font-size: 18px; }
+    .facts { display: flex; gap: 14px 30px; margin-top: 34px; color: var(--text2); font-size: 14px; flex-wrap: wrap; }
+    .facts b { display: block; color: var(--text); font: 600 22px 'Sora', sans-serif; }
+    .hero-shot { position: relative; }
+    .hero-shot img { border-radius: 22px; border: 1px solid var(--border); box-shadow: 0 18px 60px rgba(0,0,0,.5); }
+    .hero-shot .chip { position: absolute; left: -18px; bottom: 26px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 12px 16px; font-size: 14px; box-shadow: 0 12px 40px rgba(0,0,0,.5); max-width: 250px; }
+    .hero-shot .chip b { display: block; color: var(--accent); font-family: 'Sora', sans-serif; font-size: 15px; }
+
+    /* Cards */
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; padding: 28px 26px; display: flex; flex-direction: column; }
+    .alt .card { background: var(--bg); }
+    .card.best { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+    .card .ico { width: 44px; height: 44px; border-radius: 12px; background: rgba(217,182,111,.14); display: grid; place-items: center; margin-bottom: 18px; }
+    .ico svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .card p { color: var(--text2); font-size: 15px; margin-top: 8px; }
+    .card .tag { align-self: flex-start; background: var(--accent); color: #141210; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; margin-bottom: 14px; }
+    .card .more { margin-top: auto; padding-top: 18px; color: var(--accent); font-weight: 700; text-decoration: none; font-size: 15px; }
+    .card .more:hover { text-decoration: underline; }
+
+    /* Problem / answer */
+    .pa { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+    .pa div { border-top: 2px solid var(--accent); padding-top: 18px; }
+    .pa .was { color: var(--text2); font-size: 14px; margin-bottom: 6px; }
+    .pa p { color: var(--text2); font-size: 15px; margin-top: 6px; }
+
+    /* Split rows */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .split.flip > :first-child { order: 2; }
+    .ticks { list-style: none; margin-top: 22px; }
+    .ticks li { position: relative; padding-left: 30px; margin: 12px 0; color: var(--text2); }
+    .ticks li b { color: var(--text); }
+    .ticks li::before { content: ""; position: absolute; left: 0; top: 7px; width: 16px; height: 9px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+    .phones { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 480px; margin: 0 auto; }
+    .phones img { border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 18px 50px rgba(0,0,0,.45); }
+    .phones figure:last-child { margin-top: 48px; }
+    .wide img { border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 18px 60px rgba(0,0,0,.5); }
+    .cap { color: var(--text2); font-size: 13px; margin-top: 10px; text-align: center; }
+
+    /* Steps */
+    .steps { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 48px; counter-reset: s; }
+    .steps li { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 22px 20px; counter-increment: s; }
+    .steps li::before { content: counter(s); width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: rgba(217,182,111,.14); color: var(--accent); font: 600 15px 'Sora', sans-serif; margin-bottom: 14px; }
+    .steps b { display: block; font: 600 16px 'Sora', sans-serif; }
+    .steps span { color: var(--accent); font-size: 13px; font-weight: 700; display: block; margin-bottom: 4px; }
+    .steps p { color: var(--text2); font-size: 14px; margin-top: 6px; }
+
+    /* Terms */
+    .terms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+    .terms .card h3 { font-size: 16px; color: var(--text2); font-family: 'Manrope', sans-serif; font-weight: 700; }
+    .terms .big { font: 600 30px/1.15 'Sora', sans-serif; margin: 8px 0 4px; color: var(--text); }
+    .terms ul { list-style: none; margin-top: 14px; }
+    .terms li { color: var(--text2); font-size: 14px; padding: 7px 0; border-top: 1px solid var(--border); }
+    .note { color: var(--text2); font-size: 14px; margin-top: 22px; text-align: center; }
+
+    /* FAQ */
+    .faq { max-width: 760px; margin: 40px auto 0; }
+    details { border-bottom: 1px solid var(--border); padding: 18px 0; }
+    summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent); font: 500 22px/1 'Sora', sans-serif; }
+    details[open] summary::after { content: "–"; }
+    details p { color: var(--text2); margin-top: 10px; }
+
+    /* Contact */
+    .contact { background: radial-gradient(700px 360px at 50% 0%, rgba(217,182,111,.16), transparent 70%); }
+    .contact .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
+    form { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .f { display: flex; flex-direction: column; gap: 6px; }
+    .f.full { grid-column: 1 / -1; }
+    label { font-weight: 700; font-size: 14px; }
+    label small { color: var(--text2); font-weight: 500; }
+    input, select, textarea { width: 100%; font: 500 16px 'Manrope', sans-serif; color: var(--text); background: var(--bg); border: 1px solid #3A372F; border-radius: 12px; padding: 11px 13px; }
+    textarea { min-height: 96px; resize: vertical; }
+    select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--accent) 50%), linear-gradient(135deg, var(--accent) 50%, transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 34px; }
+    input:focus-visible, select:focus-visible, textarea:focus-visible, .btn:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .send { grid-column: 1 / -1; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .send .btn { padding: 13px 22px; font-size: 16px; }
+    .send p { color: var(--text2); font-size: 13px; flex: 1 1 200px; }
+    .err { grid-column: 1 / -1; color: #F08A80; font-size: 14px; font-weight: 700; }
+    .direct { margin-top: 26px; display: grid; gap: 10px; }
+    .direct a { display: flex; gap: 12px; align-items: center; text-decoration: none; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px 16px; }
+    .direct a:hover { border-color: var(--accent); }
+    .direct small { display: block; color: var(--text2); font-size: 13px; }
+
+    footer { border-top: 1px solid var(--border); padding: 32px 0 44px; color: var(--text2); font-size: 14px; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+    footer nav { gap: 22px; flex-wrap: wrap; }
+
+    @media (max-width: 960px) {
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .steps li:last-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 900px) {
+      nav.links { display: none; }
+      section { padding: 64px 0; }
+      .hero { padding: 36px 0 56px; }
+      .hero .wrap, .split, .contact .wrap { grid-template-columns: 1fr; gap: 36px; }
+      .split.flip > :first-child { order: 0; }
+      .hero-shot .chip { left: 12px; bottom: 12px; }
+      .cards, .pa, .terms { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .wrap { padding: 0 16px; }
+      .brand em { display: none; }
+      header .btn { padding: 8px 14px; font-size: 14px; }
+      header .btn-o { display: none; }
+      .steps { grid-template-columns: 1fr; }
+      form { grid-template-columns: 1fr; padding: 20px; }
+      .hero-shot .chip { position: static; margin-top: 12px; max-width: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="./">BEAUTI<span>VA</span><em>for Business</em></a>
+    <nav class="links">
+      <a href="#who">Who it's for</a>
+      <a href="#branch">For salons</a>
+      <a href="#chains">For chains</a>
+      <a href="#start">How to start</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div style="display:flex;gap:8px"><a class="btn btn-o" href="./">For customers</a><a class="btn" href="#contact">Talk to us</a></div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Business opportunity</div>
+        <h1>Customers who book with the <span class="gold">look already chosen</span>.</h1>
+        <p class="lead">Beautiva is the AI-powered beauty app. Customers try haircuts, hair colour, makeup, nails and coloured lenses on their own photo, then book a salon or artist with that look attached. Partner with us to bring those customers to your chair.</p>
+        <div class="btns"><a class="btn" href="#contact">Talk to us</a><a class="btn btn-o" href="#chains">Run a salon chain?</a></div>
+        <div class="facts">
+          <div><b>₹0</b>commission on bookings</div>
+          <div><b>Free</b>listing for salons and artists</div>
+          <div><b>60 days</b>free pilot for chains</div>
+        </div>
+      </div>
+      <div class="hero-shot">
+        <img src="img/biz-head-office.webp" width="1200" height="1129" alt="Beautiva head office screen for a salon chain: booking requests, visits, takings and no-shows for every branch, with branches that need attention flagged">
+        <div class="chip"><b>One screen, every branch</b>Requests, visits, takings and no-shows, side by side. Sample numbers.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="who" class="alt">
+    <div class="wrap center">
+      <div class="eyebrow">Who it's for</div>
+      <h2>One app, three ways to grow</h2>
+      <p class="lead">Whether you have one chair or thirty branches, Beautiva for Business runs your bookings, page and customers on phone or computer.</p>
+      <div class="cards" style="text-align:left">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div>
+          <h3>Salons and beauty parlours</h3>
+          <p>List your salon for free. Get booking requests with the customer's look, notes and price agreed before the visit, and show walk-ins a look on their own photo.</p>
+          <a class="more" href="#branch">What you get →</a>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/><circle cx="12" cy="8" r="4"/></svg></div>
+          <h3>Makeup and bridal artists</h3>
+          <p>Show your work on your own page, take bookings at your studio or, with Premium, home visits with a travel fee, and recommend the products you use.</p>
+          <a class="more" href="#branch">What you get →</a>
+        </div>
+        <div class="card best">
+          <span class="tag">New</span>
+          <h3>Salon chains</h3>
+          <p>One chain account for every branch, or one city's branches. Answer bookings for any branch and see all branches' numbers side by side.</p>
+          <a class="more" href="#chains">See the head office view →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap center">
+      <div class="eyebrow">Why it works</div>
+      <h2>The hardest bookings get easier</h2>
+      <p class="lead">Colour, bridal and big cuts are where customers hesitate most, because they can't picture the result. Beautiva lets them see it first.</p>
+      <div class="pa" style="text-align:left">
+        <div><div class="was">Customers can't picture it</div><h3>They see it on their own photo</h3><p>Hair colour, a new cut or a bridal look, tried at home or at your front desk before they decide.</p></div>
+        <div><div class="was">Redos and "that's not what I asked for"</div><h3>A stylist card and quote</h3><p>The look from the front, side and back, salon notes, and a price and time you confirm before the visit.</p></div>
+        <div><div class="was">Paying commission to aggregators</div><h3>No commission, ever</h3><p>Listing is free. Premium is a flat monthly fee, never a cut of your bookings.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="branch" class="alt">
+    <div class="wrap split">
+      <div>
+        <div class="eyebrow">For every salon, artist and branch</div>
+        <h2>Everything to run your bookings</h2>
+        <p class="lead" style="margin-top:14px">Bookings and chat are free. Quotes, offers and home visits come with Premium.</p>
+        <ul class="ticks">
+          <li><b>Bookings with no commission:</b> requests, a day, week and month calendar, walk-ins, home visits and reminders for you and the customer.</li>
+          <li><b>Show a customer a look:</b> staff try colour or bridal on a walk-in's photo before they decide.</li>
+          <li><b>Stylist card and quote:</b> the look, salon notes, front, side and back views, and the price agreed before the visit.</li>
+          <li><b>Offers near you:</b> your offers alerted to opted-in customers within 5 km.</li>
+          <li><b>Your own invite code:</b> a QR standee at the desk; every customer who joins with it is counted to you.</li>
+          <li><b>AI skin and hair checks:</b> lead customers to facials, peels and scalp treatments.</li>
+          <li><b>Quick setup:</b> snap your price list and AI fills in your services and prices.</li>
+        </ul>
+      </div>
+      <div class="phones">
+        <figure><img src="img/biz-today.webp" width="420" height="748" alt="Beautiva for Business Today screen: visits today, new booking requests, walk-in and block time buttons" loading="lazy"></figure>
+        <figure><img src="img/biz-requests.webp" width="420" height="748" alt="Booking requests with Accept, Other time and Can't do buttons, each with the service, time and estimate" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="chains">
+    <div class="wrap">
+      <div class="center">
+        <div class="eyebrow">For salon chains</div>
+        <h2>Run every branch from one place</h2>
+        <p class="lead">A chain account covers every branch, or only one city's branches. Switch branch to answer bookings, chats and reviews, and see all branches' numbers side by side.</p>
+      </div>
+      <div class="split" style="margin-top:48px">
+        <div class="wide">
+          <img src="img/biz-head-office.webp" width="1200" height="1129" alt="Head office league table of branches with requests, accept rate, visits, takings, no-shows and page opens" loading="lazy">
+          <p class="cap">Head office view with sample numbers.</p>
+        </div>
+        <div>
+          <ul class="ticks">
+            <li><b>Every branch on one screen</b> for 7, 30 or 90 days: requests, accept rate, visits, takings from booked visits, upcoming visits, no-shows, page opens, new customers and ratings.</li>
+            <li><b>Needs attention:</b> branches with requests waiting, or with nobody to answer, are flagged.</li>
+            <li><b>Branch managers keep their own login</b> and see only their branch. A branch without one sends its alerts to head office.</li>
+            <li><b>Customers who search your name see every branch</b>, nearest first.</li>
+            <li><b>Download as CSV</b> for your own reports.</li>
+            <li><b>Your brand:</b> each branch page uses your name, photos, prices and hours, approved by you before it goes live.</li>
+          </ul>
+          <div class="btns"><a class="btn" href="#contact" data-who="Salon chain">Ask for a chain pilot</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="start" class="alt">
+    <div class="wrap center">
+      <div class="eyebrow">How to start</div>
+      <h2>A free 60-day pilot for chains</h2>
+      <p class="lead">Pick 2 or 3 branches, one busy and one quiet. We set them up within a week and agree the success numbers with you on day 0. No lock-in.</p>
+      <ol class="steps" style="text-align:left">
+        <li><span>Day 0</span><b>Agree the pilot</b><p>You send the branch list, a photo of the price list, branch photos and manager emails.</p></li>
+        <li><span>Days 1 to 3</span><b>Pages go live</b><p>We build each branch page, AI reads the price list, you approve it.</p></li>
+        <li><span>Week 1</span><b>Staff trained</b><p>30 minutes per branch, a QR standee on each desk, the business app on the front-desk phone.</p></li>
+        <li><span>Every week</span><b>15-minute check-in</b><p>We go through the branch numbers with head office and fix the slowest branch first.</p></li>
+        <li><span>Day 60</span><b>You decide</b><p>Roll out branch by branch, extend 30 days, or stop at no charge.</p></li>
+      </ol>
+      <p class="note">Single salon or artist? You don't need a pilot: list for free and start taking bookings today.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap center">
+      <div class="eyebrow">Plans</div>
+      <h2>Simple, flat and fair</h2>
+      <div class="terms" style="text-align:left">
+        <div class="card">
+          <h3>Standard</h3>
+          <div class="big">Free</div>
+          <p>For any salon or artist.</p>
+          <ul><li>Your page, services and prices</li><li>Booking requests and calendar</li><li>Chat with customers about bookings</li><li>Invite code and QR standee</li></ul>
+        </div>
+        <div class="card best">
+          <h3>Premium</h3>
+          <div class="big">Flat monthly fee</div>
+          <p>Per salon or branch. Never a commission.</p>
+          <ul><li>Everything in Standard</li><li>Top of search and on Home</li><li>Quotes on look bookings</li><li>Offers alerted to customers nearby</li><li>Home visits, more photos, Instagram link</li></ul>
+        </div>
+        <div class="card">
+          <h3>Chains</h3>
+          <div class="big">60 days free</div>
+          <p>Then a lower per-branch fee as you grow.</p>
+          <ul><li>Everything in Premium</li><li>Chain account and head office view</li><li>Setup and staff training by us</li><li>A named Beautiva contact</li></ul>
+        </div>
+      </div>
+      <p class="note">Talk to us for current prices. GST extra.</p>
+    </div>
+  </section>
+
+  <section id="faq" class="alt">
+    <div class="wrap">
+      <div class="center"><div class="eyebrow">Questions</div><h2>What businesses ask us</h2></div>
+      <div class="faq">
+        <details><summary>We already have our own app. Why Beautiva?</summary><p>Keep it. Beautiva brings customers who don't know you yet, and AI try-on that your app doesn't have.</p></details>
+        <details><summary>Who owns the customer data?</summary><p>Each salon or branch keeps its bookings, chats, customer notes and reviews. We never sell customer data, and customer photos are not used to train AI.</p></details>
+        <details><summary>Do you take a commission on bookings?</summary><p>No. Listing is free, and Premium is a flat monthly fee per salon or branch. Customers pay you at the visit.</p></details>
+        <details><summary>What if the AI look isn't possible on their hair?</summary><p>The stylist card and quote let you say what's achievable, with the price and time, before the visit. The customer accepts or declines, so expectations are set in writing.</p></details>
+        <details><summary>Does it work with our billing software?</summary><p>It runs beside it today, and head office can download every branch's numbers as CSV. Tell us which software you use; a direct link is on our list.</p></details>
+        <details><summary>Our staff are too busy for another app.</summary><p>Answering a request is one tap, and training takes 30 minutes per branch. Requests can be accepted automatically if you prefer.</p></details>
+        <details><summary>Which cities?</summary><p>We are starting with salons, artists and chains in Bangalore and growing across India. Get in touch from any city.</p></details>
+        <details><summary>We are a brand, distributor or investor.</summary><p>We'd like to hear from you too. Choose "Brand or partner" in the form below and tell us what you have in mind.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Talk to us</div>
+        <h2>Let's grow your business</h2>
+        <p class="lead" style="margin-top:14px">Tell us a little about you and we'll reply on WhatsApp, usually the same day. For chains, we'll set up a 20-minute call and a demo with your own kind of customer.</p>
+        <div class="direct">
+          <a href="https://wa.me/918105568225?text=Hi%20Beautiva%2C%20I%27d%20like%20to%20know%20about%20the%20business%20opportunity." target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.4 7.9L3 21l1.2-4.4A9 9 0 1 1 21 12z"/></svg></span><span><b>WhatsApp</b><small>+91 81055 68225</small></span></a>
+          <a href="mailto:hello@marketingadda.com?subject=Beautiva%20business%20opportunity"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><b>Email</b><small>hello@marketingadda.com</small></span></a>
+        </div>
+      </div>
+      <form id="enquiry" novalidate>
+        <div class="f full">
+          <label for="who-sel">I am</label>
+          <select id="who-sel" name="who" required>
+            <option>Salon or beauty parlour</option>
+            <option>Makeup or bridal artist</option>
+            <option>Salon chain</option>
+            <option>Spa or skin clinic</option>
+            <option>Brand or partner</option>
+          </select>
+        </div>
+        <div class="f"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="f"><label for="biz">Business name</label><input id="biz" name="biz" autocomplete="organization" required></div>
+        <div class="f"><label for="city">City</label><input id="city" name="city" autocomplete="address-level2" required></div>
+        <div class="f" id="branches-f"><label for="branches">Branches <small>(chains)</small></label><input id="branches" name="branches" type="number" min="1" inputmode="numeric"></div>
+        <div class="f full"><label for="msg">Anything to add? <small>(optional)</small></label><textarea id="msg" name="msg" placeholder="Best time to call, services you want more bookings for, questions"></textarea></div>
+        <p class="err" id="err" hidden></p>
+        <div class="send">
+          <button class="btn" type="submit">Send on WhatsApp</button>
+          <a class="btn btn-o" id="send-mail" href="mailto:hello@marketingadda.com">Send by email</a>
+          <p>Opens WhatsApp or your email with your details filled in. Nothing is sent until you press send there.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><a class="brand" href="./" style="font-size:16px">BEAUTI<span>VA</span></a> &nbsp;for Business &nbsp;·&nbsp; © <span id="year">2026</span> UDO Technologies LLP</div>
+    <nav>
+      <a href="./">For customers</a>
+      <a href="https://api.beautiva.marketingadda.com/privacy">Privacy policy</a>
+      <a href="https://api.beautiva.marketingadda.com/terms">Terms of use</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var WA = '918105568225', MAIL = 'hello@marketingadda.com';
+    var f = document.getElementById('enquiry'), who = document.getElementById('who-sel');
+    var err = document.getElementById('err'), mail = document.getElementById('send-mail');
+    var val = function (id) { return document.getElementById(id).value.trim(); };
+    function text() {
+      var lines = ['Hi Beautiva, I would like to know about the business opportunity.', '',
+        'I am: ' + who.value, 'Name: ' + val('name'), 'Business: ' + val('biz'), 'City: ' + val('city')];
+      if (val('branches')) lines.push('Branches: ' + val('branches'));
+      if (val('msg')) lines.push('', val('msg'));
+      return lines.join('\n');
+    }
+    function ok() {
+      var miss = ['name', 'biz', 'city'].filter(function (id) { return !val(id); });
+      err.hidden = !miss.length;
+      if (miss.length) { err.textContent = 'Please add your name, business name and city.'; document.getElementById(miss[0]).focus(); }
+      return !miss.length;
+    }
+    function sync() {
+      var chain = who.value === 'Salon chain';
+      document.getElementById('branches-f').style.display = chain ? '' : 'none';
+      mail.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('Beautiva business: ' + (val('biz') || who.value)) + '&body=' + encodeURIComponent(text());
+    }
+    f.addEventListener('input', sync);
+    f.addEventListener('change', sync);
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (ok()) window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(text()), '_blank', 'noopener');
+    });
+    mail.addEventListener('click', function (e) { if (!ok()) e.preventDefault(); });
+    // Buttons such as "Ask for a chain pilot" pre-pick who is asking.
+    document.querySelectorAll('a[data-who]').forEach(function (a) {
+      a.addEventListener('click', function () { who.value = a.getAttribute('data-who'); sync(); });
+    });
+    sync();
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
