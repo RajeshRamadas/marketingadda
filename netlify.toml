@@ -1,13 +1,39 @@
 # Netlify config. Response headers live in _headers (Netlify and Cloudflare both read it).
 #
-# No host redirect here on purpose: a forced marketingadda.com -> www rule
-# loops with Netlify's own primary-domain redirect when the bare domain is
-# primary. Set the canonical host in the hosting dashboard instead.
+# Keep the primary domain in Netlify's dashboard. The rules below apply only to Beautiva's aliases.
 
-# Beautiva product page (beautiva/). beautiva.marketingadda.com is a domain alias of this site; this rewrite
-# serves the beautiva/ folder at its root. marketingadda.com/beautiva/ shows the same page.
-# Business opportunity page (beautiva/business.html) at beautiva.marketingadda.com/business. Listed first so it wins
-# over the catch-all below; marketingadda.com/beautiva/business works without it.
+# Custom domains for the existing Beautiva pages in beautiva/.
+[[redirects]]
+  from = "https://www.beautiva.app/*"
+  to = "https://beautiva.app/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://beautiva.app/business"
+  to = "/beautiva/business.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://beautiva.app/privacy"
+  to = "https://api.beautiva.marketingadda.com/privacy"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "https://beautiva.app/terms"
+  to = "https://api.beautiva.marketingadda.com/terms"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "https://beautiva.app/*"
+  to = "/beautiva/:splat"
+  status = 200
+  force = true
+
+# The original alias still serves Beautiva for previously shared links.
 [[redirects]]
   from = "https://beautiva.marketingadda.com/business"
   to = "/beautiva/business.html"
