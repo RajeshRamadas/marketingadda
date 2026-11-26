@@ -2,27 +2,33 @@
 #
 # Keep the primary domain in Netlify's dashboard. The rules below apply only to Beautiva's aliases.
 
-# The marketing pages live on www. The bare domain is served by the Beautiva app server.
+# The marketing pages live on about.beautiva.app. The bare domain is served by the Beautiva app server.
 [[redirects]]
-  from = "https://www.beautiva.app/business"
+  from = "https://about.beautiva.app/business"
   to = "/beautiva/business.html"
   status = 200
   force = true
 
 [[redirects]]
-  from = "https://www.beautiva.app/privacy"
+  from = "https://about.beautiva.app/white-paper"
+  to = "/beautiva/white-paper.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://about.beautiva.app/privacy"
   to = "https://api.beautiva.marketingadda.com/privacy"
   status = 302
   force = true
 
 [[redirects]]
-  from = "https://www.beautiva.app/terms"
+  from = "https://about.beautiva.app/terms"
   to = "https://api.beautiva.marketingadda.com/terms"
   status = 302
   force = true
 
 [[redirects]]
-  from = "https://www.beautiva.app/*"
+  from = "https://about.beautiva.app/*"
   to = "/beautiva/:splat"
   status = 200
   force = true
@@ -31,6 +37,12 @@
 [[redirects]]
   from = "https://beautiva.marketingadda.com/business"
   to = "/beautiva/business.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://beautiva.marketingadda.com/white-paper"
+  to = "/beautiva/white-paper.html"
   status = 200
   force = true
 

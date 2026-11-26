@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Beautiva — the AI-powered beauty app: try hairstyles, makeup and nail art on your own photo</title>
-  <meta name="description" content="Beautiva is the AI-powered beauty app: AI reads your face shape, suggests styles that suit you and shows hairstyles, makeup, hair colour, nail art and beards on your own photo. Then book a salon or artist near you.">
+  <meta name="description" content="Browse looks and try free live mirrors in the Beautiva web preview. Use the mobile app for AI photo try-on and booking with participating salons, barbers, artists and spas.">
   <meta name="theme-color" content="#0C0C0C">
   <meta property="og:title" content="Beautiva, the AI-powered beauty app — see your next look before the salon">
-  <meta property="og:description" content="The AI-powered beauty app. Try hairstyles, makeup, hair colour, nail art and beards on your own photo, from the front, side and back.">
-  <meta property="og:image" content="https://www.beautiva.app/img/hero.webp">
-  <meta property="og:url" content="https://www.beautiva.app/">
-  <link rel="canonical" href="https://www.beautiva.app/">
+  <meta property="og:description" content="Browse looks and try live mirrors in your browser. Use the Beautiva app for AI looks on your own photo and salon, spa and artist bookings.">
+  <meta property="og:image" content="https://about.beautiva.app/img/hero.webp">
+  <meta property="og:url" content="https://about.beautiva.app/">
+  <link rel="canonical" href="https://about.beautiva.app/">
   <link rel="icon" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -173,7 +173,7 @@
     .cta .stores { justify-content: center; }
     footer { border-top: 1px solid var(--border); padding: 32px 0 44px; color: var(--text2); font-size: 14px; }
     footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
-    footer nav { gap: 22px; }
+    footer nav { gap: 22px; flex-wrap: wrap; }
 
     @media (max-width: 900px) {
       nav.links { display: none; }
@@ -206,12 +206,12 @@
     "@type": "MobileApplication",
     "name": "Beautiva",
     "alternateName": "Beautiva: AI Beauty App",
-    "description": "Beautiva is the AI-powered beauty app. AI face analysis suggests styles that suit you, and AI try-on shows hairstyles, makeup, hair colour, nail art and beards on your own photo, from the front, side and back. Then book a salon or artist near you.",
+    "description": "Beautiva offers a browser preview with a style catalogue and free live mirrors. The mobile app offers AI photo try-on and bookings with participating salons, barbers, makeup artists and spas.",
     "applicationCategory": "LifestyleApplication",
     "applicationSubCategory": "AI beauty app",
     "operatingSystem": "Android, iOS",
     "url": "https://beautiva.app/",
-    "image": "https://www.beautiva.app/img/hero.webp",
+    "image": "https://about.beautiva.app/img/hero.webp",
     "keywords": "AI beauty app, AI hairstyle try on, virtual makeup try on, hair colour try on, face shape analysis",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
     "publisher": { "@type": "Organization", "name": "UDO Technologies LLP", "url": "https://marketingadda.com/" }
@@ -231,8 +231,8 @@
     <nav class="links">
       <a href="#live">Live mirror</a>
       <a href="#styles">Styles</a>
-      <a href="#salons">Salons &amp; artists</a>
-      <a href="#shop">Shop</a>
+      <a href="#salons">Services</a>
+      <a href="#shop" data-shop-feature hidden>Shop</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="business">For business</a>
@@ -248,21 +248,21 @@
       <div>
         <div class="eyebrow">AI-powered beauty app</div>
         <h1>See your next look <span class="gold">before</span> you sit in the salon chair.</h1>
-        <p class="lead">Beautiva is the AI-powered beauty app. Its AI reads your face shape, suggests the styles that suit you, and shows hairstyles, makeup, hair colour, nail art and beards on your own photo. Try makeup, hair colour and coloured lenses live in the camera mirror. Love it? Book a salon or artist near you, or have them come to your home.</p>
+        <p class="lead">Browse styles and try the free Live Mirrors in your browser. In the Beautiva app, use a selfie to explore AI-generated looks and request appointments with participating salons, barbers, makeup artists and spas.</p>
+        <a class="try-link" href="https://beautiva.app/">Open the free web preview →</a>
         <div class="stores">
-          <a class="store" data-store="appStore" href="#download" aria-label="Download on the App Store">
+          <a class="store soon" data-store="appStore" aria-label="Download on the App Store" aria-disabled="true">
             <svg><use href="#apple"/></svg><span><small>Download on the</small><strong>App Store</strong></span><span class="tag">Coming soon</span>
           </a>
-          <a class="store" data-store="googlePlay" href="#download" aria-label="Get it on Google Play">
+          <a class="store soon" data-store="googlePlay" aria-label="Get it on Google Play" aria-disabled="true">
             <svg><use href="#play"/></svg><span><small>GET IT ON</small><strong>Google Play</strong></span><span class="tag">Coming soon</span>
           </a>
         </div>
-        <a class="try-link" href="https://try.beautiva.marketingadda.com/">Browse every style free in your browser →</a>
         <div class="facts">
           <div><b>280+</b>styles to try</div>
           <div><b>3 views</b>front, side and back</div>
           <div><b>Live</b>try-on mirror</div>
-          <div><b>Free</b>live mirrors, always</div>
+          <div><b>Free</b>to browse styles</div>
         </div>
       </div>
       <div class="hero-img">
@@ -274,7 +274,7 @@
 
   <section id="how" class="alt">
     <div class="wrap center">
-      <div class="eyebrow">How it works</div>
+      <div class="eyebrow">In the Beautiva app</div>
       <h2>Three steps to a look you’re sure about</h2>
       <div class="steps" style="text-align:left">
         <div class="step"><div class="n">1</div><h3>Add a selfie</h3><p>Take a photo or pick one from your gallery. A clear, front-facing photo in good light works best.</p></div>
@@ -288,17 +288,17 @@
     <div class="wrap center">
       <div class="eyebrow">Live mirror <span class="live-badge">LIVE</span></div>
       <h2>Try it on in the camera, <span class="gold">in real time</span></h2>
-      <p class="lead">Open the mirror and the look moves with you. Change a shade with one tap, drag the slider for softer or stronger, then press Photo-real for an AI picture you can keep.</p>
+      <p class="lead">Try makeup, hair colour, glasses and sunglasses, coloured lenses or nail designs live. Use Finger Paint to practise placing makeup on your face. In the mobile app, Photo-real turns a mirror look into an AI picture you can keep.</p>
       <div class="phones">
         <figure class="phone"><img src="img/live-makeup.webp" width="420" height="909" alt="Live makeup mirror showing a soft glam look on a woman's face" loading="lazy"><figcaption><b>Makeup mirror</b><span>Lips, eyes, liner, blush, brows, skin and bindi. Ready looks for haldi, mehendi, sangeet, reception, office and more, with shades picked for your skin tone.</span></figcaption></figure>
         <figure class="phone"><img src="img/live-hair.webp" width="420" height="909" alt="Live hair colour mirror showing burgundy hair" loading="lazy"><figcaption><b>Hair colour mirror</b><span>Natural blacks and browns to burgundy, highlights and fashion shades, live on your own hair. For women and men.</span></figcaption></figure>
         <figure class="phone"><img src="img/live-lenses.webp" width="420" height="909" alt="Live coloured contact lens mirror showing hazel lenses" loading="lazy"><figcaption><b>Coloured lens mirror</b><span>Hazel, honey, grey, blue and more. Natural, two-tone or bold, blended so your own iris still shows through.</span></figcaption></figure>
       </div>
       <div class="pill-row">
-        <span class="pill"><b>Always free</b></span>
+        <span class="pill"><b>Free to use</b></span>
         <span class="pill">Works on your photo too</span>
         <span class="pill">Auto-frame and pinch to zoom</span>
-        <span class="pill"><b>Photo-real</b> for 1 credit</span>
+        <span class="pill"><b>Photo-real</b> in the app for 1 credit</span>
       </div>
     </div>
   </section>
@@ -325,10 +325,10 @@
     <div class="wrap split">
       <div>
         <div class="eyebrow">AI try-on</div>
-        <h2>Not just the front. <span class="gold">Every angle.</span></h2>
-        <p class="lead" style="margin-top:14px">A haircut is lived in from every side. Beautiva shows your new style from the front, then turns it to the side and back so there are no surprises.</p>
+        <h2>See the front, <span class="gold">side and back.</span></h2>
+        <p class="lead" style="margin-top:14px">Start with a front view in the app, then add side and back views for supported looks. Share the preview with your stylist to discuss what’s achievable.</p>
         <ul class="ticks">
-          <li><b>Your face stays yours.</b> Your features and skin tone are kept exactly as they are.</li>
+          <li><b>On your own photo.</b> Beautiva aims to preserve your features and skin tone as it previews the style.</li>
           <li><b>Made for your hair.</b> Cuts are adapted to straight, wavy, curly or coily hair.</li>
           <li><b>Save and share.</b> Keep your looks on your phone and share them with friends or your stylist.</li>
         </ul>
@@ -406,15 +406,15 @@
   <section id="salons">
     <div class="wrap split">
       <div>
-        <div class="eyebrow">Salons and artists</div>
+        <div class="eyebrow">Salon, spa and artist services</div>
         <h2>Found your look? Book it.</h2>
-        <p class="lead" style="margin-top:14px">Every try-on makes a stylist card: your look from the front, side and back with clear notes for the cut, colour or makeup. Book a salon or artist with it attached, so they know exactly what you want.</p>
+        <p class="lead" style="margin-top:14px">In the app, browse participating providers for haircuts and barbering, hair colour, bridal makeup, nails, facials, spa and massage. Attach a saved look and stylist card to an eligible booking so your provider can review it before the visit.</p>
         <div class="book" style="margin-top:28px">
           <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><div><h3>Pick a free time</h3><p>Choose one or more services for the visit and see only the times they are free. Reminders reach you and the salon a day before.</p></div></div>
           <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7"/><path d="m15 17 2 2 4-4"/></svg></div><div><h3>A clear quote before you go</h3><p>The salon or artist confirms the price, time and how close they can get to your look. You accept or decline any change.</p></div></div>
-          <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div><div><h3>Or they come to you</h3><p>Many salons and artists do home visits. See the travel fee up front, and your full address is shared only once they confirm.</p></div></div>
+          <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div><div><h3>Home visits where offered</h3><p>Choose “At my home” to find providers who travel to your area and see the travel fee before booking.</p></div></div>
           <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><div><h3>Real reviews, easy to book again</h3><p>Only customers who actually booked can rate. Add an after-visit photo and book the same look again in one tap.</p></div></div>
-          <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/><circle cx="12" cy="8" r="4"/></svg></div><div><h3>Own a salon or work as an artist?</h3><p>List your business for free, run your bookings from a day, week and month calendar, add walk-ins and reply to reviews. <a class="gold" href="business">Beautiva for Business →</a></p></div></div>
+          <div class="item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/><circle cx="12" cy="8" r="4"/></svg></div><div><h3>Run a salon, spa or skin clinic?</h3><p>Find out how to list your services, handle enquiries and manage appointments. <a class="gold" href="business">Beautiva for Business →</a></p></div></div>
         </div>
       </div>
       <div class="phones two">
@@ -424,12 +424,12 @@
     </div>
   </section>
 
-  <section id="shop" class="alt">
+  <section id="shop" class="alt" data-shop-feature hidden>
     <div class="wrap split flip">
       <div>
         <div class="eyebrow">Beauty and grooming shop</div>
-        <h2>Get the products, <span class="gold">at the lowest price</span></h2>
-        <p class="lead" style="margin-top:14px">Every makeup guide shows the products for each step. Tap one to see the lowest price we can find, or browse the shop by category.</p>
+        <h2>Find beauty and grooming products</h2>
+        <p class="lead" style="margin-top:14px">Browse products by category and compare prices from supported retailers when offers are available.</p>
         <ul class="ticks">
           <li><b>Compare shops</b> like Amazon, Nykaa, Myntra, Flipkart and Purplle in one place.</li>
           <li><b>Beauty for women, grooming for men:</b> lipstick, kajal, foundation, hair colour, beard oil, trimmers and more.</li>
@@ -447,9 +447,9 @@
     <div class="wrap center">
       <div class="eyebrow">Simple pricing</div>
       <h2>Start free. Pay only for what you use.</h2>
-      <p class="lead">Browsing styles, face analysis, makeup guides and booking are free. The live mirrors are always free. Each AI try-on uses one credit, and so does each side or back view or a Photo-real picture from the mirror.</p>
+      <p class="lead">Browse styles and use Live Mirrors for free. In the app, an AI photo try-on, an additional side or back view, and a Photo-real picture each use one credit. Your provider sets the price of your appointment.</p>
       <div class="prices" style="text-align:left">
-        <div class="price"><h3>Live mirrors</h3><div class="amt"><span data-inr="₹0">$0</span></div><p>Every live mirror: makeup, hair colour, lenses, glasses and nails. Always free, no plan needed.</p></div>
+        <div class="price"><h3>Live mirrors</h3><div class="amt"><span data-inr="₹0">$0</span></div><p>Makeup, Finger Paint, hair colour, coloured lenses, glasses and nails.</p></div>
         <div data-offer class="price"><h3>Basic pack</h3><div class="amt"><span data-inr="₹49">$0.99</span></div><p>6 credits. Use them whenever you like.</p></div>
         <div data-offer class="price"><h3>Value pack</h3><div class="amt"><span data-inr="₹249">$2.99</span></div><p>30 credits. Use them whenever you like.</p></div>
         <div data-offer class="price best"><span class="badge">Best for regulars</span><h3>Monthly plan</h3><div class="amt"><span data-inr="₹299">$3.49</span><small> / month</small></div><p>40 credits every month. Unused credits roll over. Cancel any time.</p></div>
@@ -485,14 +485,14 @@
         <h2>Questions, answered</h2>
       </div>
       <div class="faq">
-        <details><summary>Is Beautiva free?</summary><p>Yes, you can download Beautiva, browse every style, get your face analysis and book salons for free, and the live mirrors are always free. AI looks on your own photo are paid, from <span data-inr="₹49">$0.99</span> for 6 looks.</p></details>
-        <details><summary>Do I need an account?</summary><p>Yes, to use the app. Sign in with an email code, Google or Apple, so there is no password to remember. To look around first, the <a class="gold" href="https://try.beautiva.marketingadda.com/">browser preview</a> lets you browse every style without an account.</p></details>
+        <details><summary>Is Beautiva free?</summary><p>Browsing styles and using the live mirrors are free. AI-generated looks on your own photo use credits in the mobile app. Your salon or artist sets the price of the service you book.</p></details>
+        <details><summary>Do I need an account?</summary><p>Yes, to use the app. Sign in with an email code, Google or Apple, so there is no password to remember. To look around first, the <a class="gold" href="https://beautiva.app/">browser preview</a> lets you browse every style without an account.</p></details>
         <details><summary>How real do the try-ons look?</summary><p>Beautiva uses AI to put the style on your own photo while keeping your face, features and skin tone. It is a preview to help you decide, so your stylist’s final result may differ a little.</p></details>
         <details><summary>What kind of photo works best?</summary><p>A clear, front-facing selfie in good, even light, with your hair visible and nothing covering your face.</p></details>
-        <details><summary>Does the live mirror cost anything?</summary><p>No. Every live mirror is always free. Only the Photo-real button, which makes an AI picture of the look, uses one credit.</p></details>
+        <details><summary>Does the live mirror cost anything?</summary><p>The live mirrors are free. In the app, the Photo-real button uses one credit to generate a picture of the look.</p></details>
         <details><summary>Can a salon or artist come to my home?</summary><p>Yes, if they offer home visits. Choose “At my home” when you book to see who comes to your area and the travel fee. Your full address is shared only after they confirm.</p></details>
-        <details><summary>Do I buy products in the app?</summary><p>No. The shop shows the lowest price we can find and takes you to the store, like Amazon, Nykaa or Flipkart, to buy. Beautiva may earn a small commission, at no extra cost to you.</p></details>
-        <details><summary>Is it only for women?</summary><p>No. Men get haircuts, fades, beards, moustaches, hair colour, coloured lenses and a grooming shop, and you can choose to see styles for women, men or everyone.</p></details>
+        <details data-shop-feature hidden><summary>Where do I buy products?</summary><p>The beauty shop links to retailers where you can buy available products. Beautiva may earn a small commission.</p></details>
+        <details><summary>What grooming options are available for men?</summary><p>Explore haircuts, fades, beards, moustaches and hair colour. Try hair colour, glasses and coloured lenses in the live mirrors.</p></details>
         <details><summary>What happens to my photos?</summary><p>They are used only to make your looks and face analysis. You can delete them, or your whole account, from the app. Read the <a class="gold" href="https://api.beautiva.marketingadda.com/privacy">privacy policy</a> for details.</p></details>
         <details><summary>I run a salon or work as an artist. How do I get listed?</summary><p>Download the app, sign in and open My listing from your Profile to create your page. Our team reviews it before it goes live.</p></details>
       </div>
@@ -501,17 +501,17 @@
 
   <section id="download" class="cta">
     <div class="wrap">
-      <h2>Your next look is one selfie away</h2>
-      <p class="lead" style="margin:14px auto 0">Download Beautiva, the AI-powered beauty app, for iPhone or Android and use every live mirror free.</p>
+      <h2>Beautiva for iPhone and Android</h2>
+      <p class="lead" style="margin:14px auto 0">Find your app store link here. You can already explore styles and use the live mirrors in the web preview.</p>
       <div class="stores">
-        <a class="store" data-store="appStore" href="#download" aria-label="Download on the App Store">
+        <a class="store soon" data-store="appStore" aria-label="Download on the App Store" aria-disabled="true">
           <svg><use href="#apple"/></svg><span><small>Download on the</small><strong>App Store</strong></span><span class="tag">Coming soon</span>
         </a>
-        <a class="store" data-store="googlePlay" href="#download" aria-label="Get it on Google Play">
+        <a class="store soon" data-store="googlePlay" aria-label="Get it on Google Play" aria-disabled="true">
           <svg><use href="#play"/></svg><span><small>GET IT ON</small><strong>Google Play</strong></span><span class="tag">Coming soon</span>
         </a>
       </div>
-      <a class="try-link" href="https://try.beautiva.marketingadda.com/">Browse every style free in your browser →</a>
+      <a class="try-link" href="https://beautiva.app/">Open the free web preview →</a>
     </div>
   </section>
 
@@ -526,6 +526,7 @@
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="business">For business</a>
+      <a href="white-paper">White paper</a>
     </nav>
   </div>
 </footer>
@@ -544,6 +545,22 @@
      fallback while the server can't be reached. The "was" price is rounded up to
      a real-looking price ending in 9 (₹339, $4.69), so the discount is never overstated. */
   (function () {
+    // The store links in client-config are current. Local links cover an unavailable API.
+    function showStoreLinks(app) {
+      var links = window.BEAUTIVA_LINKS || {};
+      document.querySelectorAll('.store').forEach(function (a) {
+        var store = a.dataset.store;
+        var liveUrl = app && (store === 'appStore' ? app.app_store_url : app.google_play_url);
+        var url = liveUrl || links[store];
+        if (typeof url !== 'string' || !url.startsWith('https://')) return;
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.classList.remove('soon');
+        a.removeAttribute('aria-disabled');
+      });
+    }
+
     function show(pct, ends) {
       var d = Math.round(Number(pct) || 0);
       // The last day, India time; an impossible date (31 Feb) counts as none.
@@ -576,24 +593,24 @@
       });
     }
     show(window.BEAUTIVA_DISCOUNT_PERCENT, window.BEAUTIVA_OFFER_ENDS);
+    showStoreLinks();
     if (window.fetch) {
       fetch('https://api.beautiva.marketingadda.com/api/v1/client-config').then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (c) { if (c && c.pricing && c.pricing.discount_percent != null) {
-          // A server from before offer_ends existed: keep the links.js date. null means the server ended the offer.
-          show(c.pricing.discount_percent, 'offer_ends' in c.pricing ? c.pricing.offer_ends : window.BEAUTIVA_OFFER_ENDS);
-        } })
+        .then(function (c) {
+          if (!c) return;
+          showStoreLinks(c.apps && c.apps.beautiva);
+          var shopEnabled = !!(c.shop && c.shop.enabled);
+          document.querySelectorAll('[data-shop-feature]').forEach(function (el) { el.hidden = !shopEnabled; });
+          if (c.pricing && c.pricing.discount_percent != null) {
+            // A server from before offer_ends existed keeps the links.js date. null ends the offer.
+            show(c.pricing.discount_percent, 'offer_ends' in c.pricing ? c.pricing.offer_ends : window.BEAUTIVA_OFFER_ENDS);
+          }
+        })
         .catch(function () { /* keep links.js */ });
     }
   })();
 </script>
 <script>
-  // Point every store button at its link from links.js, or mark it "Coming soon" while the link is empty.
-  var links = window.BEAUTIVA_LINKS || {};
-  document.querySelectorAll('.store').forEach(function (a) {
-    var url = links[a.dataset.store];
-    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; }
-    else { a.classList.add('soon'); a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); }
-  });
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>

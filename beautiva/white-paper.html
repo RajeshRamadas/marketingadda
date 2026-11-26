@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>White paper | Beautiva</title>
+  <meta name="description" content="Beautiva’s discussion draft for salon partners and early-stage investors. Read the proposed consultation, booking and pilot approach for India.">
+  <link rel="canonical" href="https://about.beautiva.app/white-paper">
+  <link rel="icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:title" content="Beautiva white paper">
+  <meta property="og:url" content="https://about.beautiva.app/white-paper">
+  <meta property="og:type" content="article">
+  <style>
+    :root { --ink: #28231f; --paper: #fbf9f5; --border: #e3dacf; --accent: #765324; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.65 system-ui, sans-serif; }
+    a { color: var(--accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .site-header { background: #141210; color: #f5f1ea; }
+    .site-header nav { max-width: 860px; margin: auto; padding: 16px 20px; display: flex; flex-wrap: wrap; gap: 8px 26px; }
+    .site-header a { color: inherit; font-weight: 600; }
+    .site-header a:first-child { color: #e7c888; }
+    main { max-width: 860px; margin: auto; padding: 42px 20px 72px; }
+    .paper-header { padding-bottom: 22px; border-bottom: 1px solid var(--border); }
+    .paper-header .brand { font-size: .875rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.9rem); letter-spacing: -.035em; margin: 8px 0 16px; text-wrap: balance; }
+    h2 { margin: 44px 0 14px; font-size: clamp(1.35rem, 3.3vw, 1.7rem); scroll-margin-top: 20px; }
+    h3 { margin: 24px 0 8px; font-size: 1.15rem; }
+    p { margin: 0 0 14px; }
+    .version { color: var(--accent); font-size: .93rem; font-weight: 650; }
+    .contents { margin: 24px 0 30px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 12px; }
+    .contents summary { cursor: pointer; font-weight: 650; }
+    .contents ul { list-style: none; margin: 8px 0 0; padding: 0; }
+    .contents a { display: inline-block; padding: 3px 0; }
+    .table-scroll { margin: 20px 0; overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
+    table { width: 100%; min-width: 34rem; border-collapse: collapse; background: #fff; font-size: .925rem; }
+    th, td { padding: 10px 12px; text-align: left; vertical-align: top; border-top: 1px solid var(--border); }
+    th { background: #f2eadc; border-top: 0; }
+    td p:last-child { margin-bottom: 0; }
+    .partner-link { margin: 38px 0 0; }
+    @media print {
+      body { background: #fff; color: #000; font-size: 10.5pt; }
+      .site-header, .contents, .partner-link { display: none; }
+      main { max-width: none; padding: 0; }
+      h2, h3 { break-after: avoid; }
+      .table-scroll { overflow: visible; }
+      table { min-width: 0; font-size: 9pt; }
+      th, td { padding: 5px 6px; }
+      tr { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <nav aria-label="Beautiva">
+    <a href="./">About Beautiva</a>
+    <a href="business">Salon and clinic partnerships</a>
+    <a href="https://beautiva.app/">Open Beautiva</a>
+  </nav>
+</header>
+<!-- Paper source: RajeshRamadas/Beauty_Studio d04bf80bf13b8d307955527ac041b7196171bbe8:marketing/white_paper/01-white-paper.md -->
+<main>
+  <article aria-labelledby="paper-title">
+    <header class="paper-header">
+      <p class="brand">Beautiva</p>
+      <h1 id="paper-title">Connecting Local Beauty Expertise, Visual Consultation and Salon Growth in India</h1>
+<p>A literature-informed business white paper for salon partners and early-stage investors</p>
+<p class="version">Version 2.0 — Discussion draft — 25 November 2026</p>
+<p><strong>Evidence status:</strong> Beautiva is presented as an early-stage, pre-pilot business. No verified revenue, customer count, signed salon partnerships or pilot results have been supplied. Features, prices, costs and commercial outcomes below are proposals or assumptions requiring validation.</p>
+<p><strong>Comparison scope:</strong> Competitor descriptions reflect established product positioning. Current features, Indian availability, integrations and prices have not been checked live for this edition. Proposed advantages must be demonstrated.</p>
+    </header>
+    <details class="contents">
+      <summary>Contents</summary>
+      <ul>
+        <li><a href="#1-executive-summary">1. Executive summary</a></li>
+        <li><a href="#2-indias-beauty-service-opportunity">2. India's beauty-service opportunity</a></li>
+        <li><a href="#3-the-proposed-beautiva-service">3. The proposed Beautiva service</a></li>
+        <li><a href="#4-benefits-for-the-beautiva-network">4. Benefits for the Beautiva network</a></li>
+        <li><a href="#5-discovery-beyond-immediate-walk-ins">5. Discovery beyond immediate walk-ins</a></li>
+        <li><a href="#6-competitive-landscape">6. Competitive landscape</a></li>
+        <li><a href="#7-advantages-to-prove">7. Advantages to prove</a></li>
+        <li><a href="#8-proposed-commercial-package">8. Proposed commercial package</a></li>
+        <li><a href="#9-illustrative-provider-economics">9. Illustrative provider economics</a></li>
+        <li><a href="#10-illustrative-salon-business-case">10. Illustrative salon business case</a></li>
+        <li><a href="#11-research-foundation-and-validation">11. Research foundation and validation</a></li>
+        <li><a href="#12-product-quality-and-service-trust">12. Product quality and service trust</a></li>
+        <li><a href="#13-launch-strategy-and-operating-risks">13. Launch strategy and operating risks</a></li>
+        <li><a href="#14-investor-case-and-milestones">14. Investor case and milestones</a></li>
+        <li><a href="#15-evidence-before-wider-circulation">15. Evidence before wider circulation</a></li>
+        <li><a href="#16-references">16. References</a></li>
+      </ul>
+    </details>
+<h2 id="1-executive-summary">1. Executive summary</h2>
+<p>Beautiva proposes a platform that helps customers discover suitable beauty professionals, understand a proposed service and move from consultation to a completed appointment.</p>
+<p>Professional expertise can be difficult to discover and compare. A salon may have capable staff and loyal customers while portfolios, prices, enquiries, quotations and bookings remain distributed across walk-ins, calls, messaging and social media.</p>
+<p>The proposed journey is:</p>
+<p><strong>Discover expertise → explore a look → confirm feasibility and price → book → complete the service → return.</strong></p>
+<p>Customers should gain a clearer choice. Owners should gain useful visibility and a measurable connection between enquiries and completed business. Professionals should gain better presentation of specialisms and authentic work.</p>
+<p>A proposed adjustable 5–6 km starting search radius could help customers find expertise beyond their immediate neighbourhood. Skill, availability, budget and travel time also matter. Distance does not guarantee enquiries, travel or bookings.</p>
+<p>Beautiva enters a competitive market. Booking platforms already connect discovery with appointments. Salon systems support established operations. Beauty-technology companies offer visualisation capabilities. Service marketplaces compete for demand, while maps, social platforms and messaging remain familiar alternatives.</p>
+<p>The investment case therefore depends on demonstrated execution: relevant matching, reliable consultation, manageable staff effort and improved economics for a defined segment.</p>
+<p>The starting commercial hypothesis is ₹1,499 per location per month, up to five staff profiles and ten successful AI previews. A proposed ₹499 pack adds 25 previews. Costs and willingness to pay remain unverified.</p>
+<p>The next milestone is a controlled local pilot followed by longer commercial follow-up to measure renewal at the standard price.</p>
+<h2 id="2-indias-beauty-service-opportunity">2. India's beauty-service opportunity</h2>
+<h3 id="a-diverse-provider-landscape">A diverse provider landscape</h3>
+<p>India includes neighbourhood salons, independent stylists, bridal specialists, home-based providers, home-service businesses and organised chains. Requirements vary by locality, language, service, price and customer expectations.</p>
+<p>A neighbourhood salon may prioritise repeat business and scheduling. A bridal specialist may depend on portfolios, trials, travel and event dates. An independent stylist may work across locations.</p>
+<p>Begin with a defined segment and locality.</p>
+<h3 id="what-unorganised-means-here">What "unorganised" means here</h3>
+<p>Fragmentation refers to information and coordination gaps, not a lack of expertise or professionalism.</p>
+<p>Digitisation can organise records and workflows. It does not automatically establish registration, accreditation, tax compliance or service safety.</p>
+<div class="table-scroll" role="region" aria-label="White paper table" tabindex="0">
+<table>
+<thead>
+<tr class="header">
+<th>Operating gap</th>
+<th>Consequence</th>
+<th>Proposed response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Expertise is difficult to compare</td>
+<td>Choices use incomplete information</td>
+<td>Profiles, specialisms and authentic portfolios</td>
+</tr>
+<tr class="even">
+<td>Prices and scope need explanation</td>
+<td>Enquiries stall or expectations differ</td>
+<td>Menus and an approved final quotation</td>
+</tr>
+<tr class="odd">
+<td>Desired looks are hard to communicate</td>
+<td>Longer or unclear consultations</td>
+<td>References and supported visual consultation</td>
+</tr>
+<tr class="even">
+<td>Bookings sit across channels</td>
+<td>Changes and appointments are harder to track</td>
+<td>Confirmed appointments and service records</td>
+</tr>
+<tr class="odd">
+<td>Repeat visits depend on memory</td>
+<td>Follow-up is inconsistent</td>
+<td>Permission-based reminders and history</td>
+</tr>
+<tr class="even">
+<td>Performance is measured informally</td>
+<td>Marketing value is difficult to assess</td>
+<td>Enquiry-to-completion and contribution reporting</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="market-sizing">Market sizing</h3>
+<p>National beauty spending is not automatically Beautiva's addressable market. Product sales, salon services, home services and software subscriptions are different categories.</p>
+<p>Use:</p>
+<p><strong>Reachable salons × realistic paid adoption × annual realised subscription revenue.</strong></p>
+<p>Inputs need a verified local census, interviews, onboarding capacity and observed renewal. Estimate add-ons separately.</p>
+<p>For scale illustration only, 100 locations paying ₹1,499 would produce ₹1,49,900 in monthly subscription billing before discounts and applicable taxes. This is arithmetic, not a forecast or existing traction.</p>
+<p>This edition quotes no unverified national market value, salon count, growth rate or unorganised percentage.</p>
+<h2 id="3-the-proposed-beautiva-service">3. The proposed Beautiva service</h2>
+<h3 id="professional-led-discovery">Professional-led discovery</h3>
+<p>Search should support specialism, authentic work, service category, budget, availability, location, travel time, accessibility and relevant language preferences.</p>
+<p>A customer seeking a particular bridal style or nail service may value demonstrated expertise more than the nearest shop.</p>
+<p>Verification must match the claim. Identity verification is not technical accreditation, and portfolios should not imply unestablished qualifications.</p>
+<h3 id="visual-consultation">Visual consultation</h3>
+<p>Reference images and eligible AI previews could help customers explain preferences. Their purpose is a practical discussion about what is achievable.</p>
+<p>Condition, product, lighting and technique affect the actual result. The professional confirms feasibility, duration, scope and final price before booking.</p>
+<h3 id="connected-service-record">Connected service record</h3>
+<p>The proposed record connects:</p>
+<p><strong>Preference → reference/preview → professional assessment → approved quotation → appointment → completed service → feedback.</strong></p>
+<p>Measure whether it reduces repeated explanation and improves understanding, staff effort and outcomes.</p>
+<p>Fit existing operations. Replacing mature billing, inventory or payroll systems should require demonstrated value. Integrations or manual handoffs need clear responsibilities to avoid duplicate records and bookings.</p>
+<h3 id="product-status">Product status</h3>
+<p>This is proposed commercial scope. Current implementation was not audited for this edition. Features enter a paid package only after documented acceptance.</p>
+<h2 id="4-benefits-for-the-beautiva-network">4. Benefits for the Beautiva network</h2>
+<div class="table-scroll" role="region" aria-label="White paper table" tabindex="0">
+<table>
+<thead>
+<tr class="header">
+<th>Participant</th>
+<th>Potential advantage</th>
+<th>Required demonstration</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Customers</td>
+<td>Relevant discovery and clearer expectations</td>
+<td>Suitable results, understanding and transparent pricing</td>
+</tr>
+<tr class="even">
+<td>Owners</td>
+<td>Visibility and consistent enquiry handling</td>
+<td>Contribution exceeds the full added cost</td>
+</tr>
+<tr class="odd">
+<td>Professionals</td>
+<td>Presentation of specialisms and authentic work</td>
+<td>Fair attribution and suitable enquiries</td>
+</tr>
+<tr class="even">
+<td>Independents</td>
+<td>Structured services without separate software</td>
+<td>Practical onboarding and area controls</td>
+</tr>
+<tr class="odd">
+<td>Bridal specialists</td>
+<td>Clearer trial, look, travel and package discussions</td>
+<td>Fewer misunderstandings and workable terms</td>
+</tr>
+<tr class="even">
+<td>Beautiva</td>
+<td>Recurring revenue from a useful workflow</td>
+<td>Paid retention and sustainable costs</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A salon should understand record access, export and cancellation arrangements. Participation must not automatically share its customer list with competing providers.</p>
+<h2 id="5-discovery-beyond-immediate-walk-ins">5. Discovery beyond immediate walk-ins</h2>
+<p>Expertise may attract customers beyond regular walk-in catchments. An adjustable 5–6 km starting radius is a hypothesis to test by service, traffic, appointment value and willingness to travel.</p>
+<p>A customer may accept a longer journey for a specialist or bridal trial and prefer convenience for a routine service.</p>
+<p>Measure:</p>
+<p><strong>Relevant discovery → profile visit → qualified enquiry → confirmed booking → completed paid service → repeat visit.</strong></p>
+<p>Impressions do not establish revenue or incremental business. Compare distance bands, channels and services, including weak enquiries and travel-related cancellation.</p>
+<h2 id="6-competitive-landscape">6. Competitive landscape</h2>
+<h3 id="relevant-categories">Relevant categories</h3>
+<p>Competition includes salon software and booking platforms, beauty visualisation vendors, service marketplaces and existing customer habits. Categories overlap; a category description is not a complete feature audit.</p>
+<h3 id="named-comparison">Named comparison</h3>
+<div class="table-scroll" role="region" aria-label="White paper table" tabindex="0">
+<table>
+<thead>
+<tr class="header">
+<th>Alternative</th>
+<th>Established positioning</th>
+<th>Important strength</th>
+<th>Beautiva's proposed response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fresha</td>
+<td>Beauty/wellness booking marketplace and business software</td>
+<td>Discovery, appointments and provider operations</td>
+<td>Demonstrate additional specialist-matching and consultation value</td>
+</tr>
+<tr class="even">
+<td>Zenoti</td>
+<td>Salon/spa/wellness management, including multi-location operations</td>
+<td>Operational breadth and established workflows</td>
+<td>Test a focused, manageable workflow for the selected segment</td>
+</tr>
+<tr class="odd">
+<td>Phorest</td>
+<td>Salon management, customer relationships and marketing</td>
+<td>Operating and retention focus</td>
+<td>Demonstrate value without unnecessary migration</td>
+</tr>
+<tr class="even">
+<td>Perfect Corp / YouCam</td>
+<td>Beauty AI, AR and virtual try-on</td>
+<td>Visual-technology depth and established applications</td>
+<td>Evaluate technology supply while focusing on service fulfilment</td>
+</tr>
+<tr class="odd">
+<td>ModiFace</td>
+<td>Beauty AI/AR for brand and retail experiences</td>
+<td>Specialist visualisation expertise</td>
+<td>Evaluate fit and connect supported experiences to professionals</td>
+</tr>
+<tr class="even">
+<td>Urban Company</td>
+<td>Indian service marketplace with a substantial home-service model</td>
+<td>Consumer demand, trust and fulfilment operations</td>
+<td>Test a salon-first, professional-led proposition</td>
+</tr>
+<tr class="odd">
+<td>YesMadam</td>
+<td>Indian home-beauty service platform</td>
+<td>Familiar beauty-at-home proposition</td>
+<td>Establish where salon expertise and consultation create an alternative</td>
+</tr>
+<tr class="even">
+<td>Maps, social platforms and messaging</td>
+<td>Familiar discovery, portfolios and conversations</td>
+<td>Existing audiences and low adoption friction</td>
+<td>Reduce coordination effort enough to justify changing habits</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>No partnership is claimed. Current scope, geography, features and terms require verification.</p>
+<h3 id="strong-direct-overlap">Strong direct overlap</h3>
+<p>Fresha and other discovery/booking platforms are important benchmarks. Profiles, bookings, records and location search are not inherently unique.</p>
+<p>Beautiva proposes a more specific journey: relevant skill, understanding an achievable service, professional approval and completed fulfilment. That proposition requires current competitor review and direct testing.</p>
+<h3 id="incumbent-advantages">Incumbent advantages</h3>
+<p>Established alternatives may have distribution, recognition, operating experience, breadth, integrations and research investment.</p>
+<p>No supplied evidence establishes that Beautiva can outperform them. A focused launch reduces scope; it does not remove acquisition, retention or quality requirements.</p>
+<h3 id="potential-technology-suppliers">Potential technology suppliers</h3>
+<p>Visual vendors can be evaluated as suppliers as well as alternatives. Building every model internally can raise cost and delay acceptance. Licensing may allow concentration on workflow and fulfilment.</p>
+<p>Evaluate quality, commercial rights, data handling, reliability and effective cost per usable output. No vendor price is assumed in this paper.</p>
+<h2 id="7-advantages-to-prove">7. Advantages to prove</h2>
+<div class="table-scroll" role="region" aria-label="White paper table" tabindex="0">
+<table>
+<thead>
+<tr class="header">
+<th>Proposed advantage</th>
+<th>Potential value</th>
+<th>Required evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Skill-specific matching</td>
+<td>Find relevant expertise</td>
+<td>Suitable selection and task completion</td>
+</tr>
+<tr class="even">
+<td>Consultation linked to quotation</td>
+<td>Clearer expectations and price</td>
+<td>Understanding and fewer disputes</td>
+</tr>
+<tr class="odd">
+<td>Practical local onboarding</td>
+<td>Easier owner/staff adoption</td>
+<td>Training, support cost and sustained usage</td>
+</tr>
+<tr class="even">
+<td>Reliable supported previews</td>
+<td>Useful aids with clear limits</td>
+<td>Quality across representative conditions</td>
+</tr>
+<tr class="odd">
+<td>Commercial transparency</td>
+<td>Owners judge value</td>
+<td>Added contribution after all costs</td>
+</tr>
+<tr class="even">
+<td>Provider identity and record controls</td>
+<td>Clear business boundaries</td>
+<td>Understood terms and appropriate access</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>"AI-powered", "all-in-one" and "India-first" do not establish defensibility. Advantage needs trusted relationships, useful information, reliable operation and retention.</p>
+<p>Photos are not automatically a proprietary training asset. Rights and separate permission are required.</p>
+<h3 id="compare-total-cost">Compare total cost</h3>
+<p>Compare matched scope:</p>
+<p>**Subscription + usage + relevant payment/marketplace charges + messaging</p>
+<ul>
+<li>onboarding + integration + staff effort + applicable taxes.**</li>
+</ul>
+<p>Charges depend on product and contract. Request comparable quotations for one location, five staff, the required workflow and a specified preview volume where relevant.</p>
+<p>Do not claim to be cheaper before completing this comparison.</p>
+<h2 id="8-proposed-commercial-package">8. Proposed commercial package</h2>
+<div class="table-scroll" role="region" aria-label="White paper table" tabindex="0">
+<table>
+<thead>
+<tr class="header">
+<th>Salon Starter hypothesis</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Subscription</td>
+<td>₹1,499 per location per month</td>
+</tr>
+<tr class="even">
+<td>Staff profiles</td>
+<td>Up to five</td>
+</tr>
+<tr class="odd">
+<td>Included previews</td>
+<td>Ten successful AI previews monthly</td>
+</tr>
+<tr class="even">
+<td>Optional pack</td>
+<td>25 successful previews for ₹499</td>
+</tr>
+<tr class="odd">
+<td>Discovery</td>
+<td>Profile, catalogue and authentic portfolio</td>
+</tr>
+<tr class="even">
+<td>Target workflow</td>
+<td>Supported consultation, approved quotation, booking, records and basic reporting</td>
+</tr>
+<tr class="odd">
+<td>Onboarding</td>
+<td>Remote setup and initial training</td>
+</tr>
+<tr class="even">
+<td>Cancellation</td>
+<td>Monthly, with terms explained upfront</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>All inclusions require acceptance. Taxes are additional where applicable. Messaging, payment charges and on-site help require explicit terms.</p>
+<p>Define allowance reset, pack validity, cancellation and unused credits before sale. Technical failures should not consume allowance.</p>
+<p>For approximately five founding salons, propose a 14-day trial, ₹999/month for three paid months and ₹1,499 thereafter, agreed upfront, with monthly cancellation.</p>
+<p>These are proposed terms, not signed business or demand evidence.</p>
+<h2 id="9-illustrative-provider-economics">9. Illustrative provider economics</h2>
+<p>These figures are planning assumptions.</p>
+<div class="table-scroll" role="region" aria-label="White paper table" tabindex="0">
+<table>
+<thead>
+<tr class="header">
+<th>Monthly cost per salon</th>
+<th style="text-align: right;">Assumed amount</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hosting, storage and backups</td>
+<td style="text-align: right;">₹200</td>
+</tr>
+<tr class="even">
+<td>Support and onboarding allocation</td>
+<td style="text-align: right;">₹250</td>
+</tr>
+<tr class="odd">
+<td>Ten previews at ₹8 effective cost</td>
+<td style="text-align: right;">₹80</td>
+</tr>
+<tr class="even">
+<td>Payments and administration allocation</td>
+<td style="text-align: right;">₹70</td>
+</tr>
+<tr class="odd">
+<td>Total assumed delivery cost</td>
+<td style="text-align: right;"><strong>₹600</strong></td>
+</tr>
+<tr class="even">
+<td>Standard subscription</td>
+<td style="text-align: right;">₹1,499</td>
+</tr>
+<tr class="odd">
+<td>Contribution before other overheads</td>
+<td style="text-align: right;"><strong>₹899</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>₹899 is not net profit. Development, acquisition, salaries outside the allocation, tax and other overheads remain to be funded.</p>
+<p>The introductory price leaves ₹399 before other overheads.</p>
+<p>An extra pack produces:</p>
+<p><strong>₹499 − (25 × ₹8) = ₹299 before other costs.</strong></p>
+<p>Effective preview cost must include processing, failures, retries and applicable checks. Allocate costs once and distinguish processing, review and support.</p>
+<p>Report upfront onboarding cash cost and its allocation period. Replace assumptions with invoices and operating records.</p>
+<h2 id="10-illustrative-salon-business-case">10. Illustrative salon business case</h2>
+<p>Contribution means service revenue less incremental service-delivery costs. It is distinct from revenue and net profit.</p>
+<p>Assume 100 eligible qualified consultations monthly, 40% baseline completion, ₹780 contribution per additional standard-service booking, ₹300 per additional paid add-on and ₹1,998 software cost: subscription plus one pack.</p>
+<p>The package provides 35 selectively used previews, not one for every consultation.</p>
+<div class="table-scroll" role="region" aria-label="White paper table" tabindex="0">
+<table>
+<thead>
+<tr class="header">
+<th>Monthly scenario</th>
+<th style="text-align: right;">Low</th>
+<th style="text-align: right;">Base</th>
+<th style="text-align: right;">High</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Booking-rate increase</td>
+<td style="text-align: right;">0 pp</td>
+<td style="text-align: right;">+5 pp</td>
+<td style="text-align: right;">+10 pp</td>
+</tr>
+<tr class="even">
+<td>Additional completed bookings</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td>New-booking contribution</td>
+<td style="text-align: right;">₹0</td>
+<td style="text-align: right;">₹3,900</td>
+<td style="text-align: right;">₹7,800</td>
+</tr>
+<tr class="even">
+<td>Additional add-ons among 40 baseline bookings</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td>Additional add-on contribution</td>
+<td style="text-align: right;">₹0</td>
+<td style="text-align: right;">₹600</td>
+<td style="text-align: right;">₹1,200</td>
+</tr>
+<tr class="even">
+<td>Total added contribution</td>
+<td style="text-align: right;">₹0</td>
+<td style="text-align: right;">₹4,500</td>
+<td style="text-align: right;">₹9,000</td>
+</tr>
+<tr class="odd">
+<td>After ₹1,998 software charge</td>
+<td style="text-align: right;"><strong>−₹1,998</strong></td>
+<td style="text-align: right;"><strong>₹2,502</strong></td>
+<td style="text-align: right;"><strong>₹7,002</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>pp means percentage points. Count only add-ons above existing business. Apply them to the original 40 bookings to avoid double counting with new appointments.</p>
+<p>These are scenarios, not forecasts or results.</p>
+<p>Three additional bookings at ₹780 cover software charges alone. Extra consultation time, acquisition, messaging, discounts and capacity can raise break-even.</p>
+<p>Displaced appointments are not incremental growth. Do not monetise time savings twice if resulting additional appointments are already counted.</p>
+<h2 id="11-research-foundation-and-validation">11. Research foundation and validation</h2>
+<h3 id="published-research">Published research</h3>
+<p>Augmented reality overlays digital elements on a view of the real world. Generative systems can create or alter imagery. Evidence about one does not automatically transfer to the other.</p>
+<p>Selected research examines online service experiences (Hilken et al. [2]), consumer responses to AR (Javornik [3]), experience, satisfaction and willingness to buy (Poushneh and Vasquez-Parraga [4]), and retail AR and sales (Tan et al. [5]).</p>
+<p>This is a rationale for testing, not proof of Beautiva's quality, Indian salon outcomes or willingness to pay. This narrative synthesis is not a systematic review or a peer-reviewed Beautiva study.</p>
+<h3 id="separate-discovery-and-consultation-effects">Separate discovery and consultation effects</h3>
+<p>Discovery evaluation tracks relevant traffic, enquiries, completed appointments and repeat behaviour by source and distance.</p>
+<p>Last-touch attribution does not establish that a customer would not otherwise have visited. Later geographic or phased-rollout comparisons can investigate incrementality.</p>
+<p>Consultation evaluation compares eligible consultations using the usual process with a Beautiva-assisted process. It assesses understanding, staff effort, quotation and completion among customers entering the measured workflow.</p>
+<p>A bundled comparison does not isolate AI. A later study could compare usual consultation, structured consultation without AI and structured consultation with an eligible preview.</p>
+<h3 id="proposed-pilot">Proposed pilot</h3>
+<p>Begin with approximately five salons in one locality, subject to readiness. Collect baseline information before intervention, run an approximately eight-week operational pilot and continue commercial follow-up.</p>
+<p>Where feasible, randomise eligible periods or appointments. Prespecify eligibility, services, outcome windows and exclusions.</p>
+<p>Primary consultation outcome:</p>
+<p><strong>Completed paid appointments ÷ eligible qualified consultations.</strong></p>
+<p>Analyse by assigned workflow and report actual usage separately.</p>
+<div class="table-scroll" role="region" aria-label="White paper table" tabindex="0">
+<table>
+<thead>
+<tr class="header">
+<th>Supporting measure</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Understanding of scope, quotation and preview limits</td>
+<td>Decision clarity</td>
+</tr>
+<tr class="even">
+<td>Defects, failures and retries</td>
+<td>Technical reliability</td>
+</tr>
+<tr class="odd">
+<td>Consultation and support time</td>
+<td>Operating burden</td>
+</tr>
+<tr class="even">
+<td>Contribution and incremental costs</td>
+<td>Commercial value</td>
+</tr>
+<tr class="odd">
+<td>Complaints, cancellations and refunds</td>
+<td>Expectation mismatch</td>
+</tr>
+<tr class="even">
+<td>Initial payment and renewal</td>
+<td>Willingness to pay</td>
+</tr>
+<tr class="odd">
+<td>Discovery outcomes by source/distance</td>
+<td>Wider visibility relevance</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Account for service mix, capacity, promotions, staff learning, repeated customers and within-salon correlation. Retain refusals, failures and missing records.</p>
+<p>A five-salon pilot is operational and unlikely to establish modest uplift reliably. Use observed variability to design a later adequately powered study.</p>
+<h3 id="longer-renewal-follow-up">Longer renewal follow-up</h3>
+<p>Eight weeks cannot establish standard-price renewal with a 14-day trial and three discounted paid months.</p>
+<p>Continue through the first ₹1,499 billing cycle and subsequent renewal or cancellation where feasible. Separate intention from actual payment.</p>
+<h2 id="12-product-quality-and-service-trust">12. Product quality and service trust</h2>
+<h3 id="visual-reliability">Visual reliability</h3>
+<p>Missing a nail, spilling onto skin or changing an unintended feature can undermine consultation.</p>
+<p>Reported live-nail issues have not been revalidated for this edition. Modes without a documented pass should remain outside the initial paid scope.</p>
+<div class="table-scroll" role="region" aria-label="White paper table" tabindex="0">
+<table>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Evaluation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nail coverage</td>
+<td>Annotated nail area covered, for every visible nail</td>
+</tr>
+<tr class="even">
+<td>Skin spill</td>
+<td>Painted area outside the nail; assess thumbs separately</td>
+</tr>
+<tr class="odd">
+<td>Position and scale</td>
+<td>Input sizes, orientation, mirrored displays and poses</td>
+</tr>
+<tr class="even">
+<td>Motion stability</td>
+<td>Edge jitter, dropouts and coverage change</td>
+</tr>
+<tr class="odd">
+<td>Perceptual quality</td>
+<td>Actual before-and-after browser captures</td>
+</tr>
+<tr class="even">
+<td>Usable output</td>
+<td>Accepted quality, not merely API success</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Use photos/nails_classic_nude-front.jpg, other bundled nail photos, stationary hands and moving-hand sequences. Contrasting blue polish should reveal missed regions and spill.</p>
+<p>A hand-wide average can hide an entirely unpainted finger. Report per-nail outcomes and failures. Prespecify numerical criteria. Regression passes alone are insufficient.</p>
+<h3 id="honest-presentation">Honest presentation</h3>
+<p>Distinguish generated previews from actual work. A professional confirms feasibility and quotation. Portfolios need permission; reviews and badges should explain what was checked.</p>
+<h3 id="data-controls">Data controls</h3>
+<p>Explain image purpose, processing, storage, access, retention and deletion. Treat service use, marketing and model training appropriately separately.</p>
+<p>Do not automatically share salon customer lists. Review applicable Indian privacy, consumer, payment, tax and platform requirements before launch.</p>
+<h2 id="13-launch-strategy-and-operating-risks">13. Launch strategy and operating risks</h2>
+<p>Begin in one compact locality with a defined provider segment and relevant demand.</p>
+<p>Develop supply and acquisition together through measured onboarding, permitted portfolio capture, referrals and small local experiments. Record source cost and completed-service conversion.</p>
+<div class="table-scroll" role="region" aria-label="White paper table" tabindex="0">
+<table>
+<thead>
+<tr class="header">
+<th>Risk</th>
+<th>Consequence</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low relevant demand</td>
+<td>Listings yield few useful enquiries</td>
+<td>Validate demand alongside supply</td>
+</tr>
+<tr class="even">
+<td>High staff effort</td>
+<td>Salons abandon the workflow</td>
+<td>Measure time and simplify tasks</td>
+</tr>
+<tr class="odd">
+<td>Unreliable previews</td>
+<td>Complaints and mismatch</td>
+<td>Gate modes and require professional review</td>
+</tr>
+<tr class="even">
+<td>Underestimated costs</td>
+<td>Insufficient contribution</td>
+<td>Track processing, support and onboarding</td>
+</tr>
+<tr class="odd">
+<td>Discount-driven adoption</td>
+<td>Early payment appears sustainable</td>
+<td>Follow standard-price renewal</td>
+</tr>
+<tr class="even">
+<td>Excessive scope</td>
+<td>Difficult development and training</td>
+<td>Launch a focused accepted workflow</td>
+</tr>
+<tr class="odd">
+<td>Feature overlap</td>
+<td>Weak distinction</td>
+<td>Prove value for a defined segment</td>
+</tr>
+<tr class="even">
+<td>Poor record controls</td>
+<td>Lost trust</td>
+<td>Clear access, consent and exit processes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Expansion follows quality, demand, actual costs and retention.</p>
+<h2 id="14-investor-case-and-milestones">14. Investor case and milestones</h2>
+<p>The pre-pilot case is a programme for establishing evidence.</p>
+<div class="table-scroll" role="region" aria-label="White paper table" tabindex="0">
+<table>
+<thead>
+<tr class="header">
+<th>Phase</th>
+<th>Work</th>
+<th>Required evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Readiness</td>
+<td>Research, accepted scope and measurement</td>
+<td>Usable workflow, responsibilities and baseline definitions</td>
+</tr>
+<tr class="even">
+<td>Operational pilot</td>
+<td>Capped cohort and consultation comparison</td>
+<td>Quality, adoption, time, cost and completion</td>
+</tr>
+<tr class="odd">
+<td>Commercial refinement</td>
+<td>Price, allowance and support</td>
+<td>Standard-price renewal and repeatable onboarding</td>
+</tr>
+<tr class="even">
+<td>Controlled expansion</td>
+<td>Adjacent areas and supported modes</td>
+<td>Demand, retention and delivery capacity</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Funding should support reliable modes, supply and demand, onboarding, support, measurement and data controls.</p>
+<p>Set amount and runway from an operating budget. No valuation, raise amount or traction is assumed.</p>
+<p>Distinguish salon from customer acquisition, upfront onboarding from recurring delivery, introductory from standard revenue, and revenue from contribution. Lifetime-value claims need retention evidence.</p>
+<h3 id="investor-positioning">Investor positioning</h3>
+<p>Beautiva is developing a professional-led journey from local discovery to consultation and completed service. Its proposed opportunity is easier skill discovery and clearer decisions.</p>
+<p>The next milestone is accepted quality, manageable staff effort, actual cost and sustained paid use in a focused Indian locality.</p>
+<h3 id="salon-positioning">Salon positioning</h3>
+<p>Beautiva is being developed to help suitable customers discover your team's expertise and understand the service before booking.</p>
+<p>The proposed workflow connects profile, authentic work, supported consultation and approved quotation. A small pilot would measure added value after software, staff effort and other costs, with clear terms and realistic expectations.</p>
+<h2 id="15-evidence-before-wider-circulation">15. Evidence before wider circulation</h2>
+<p>Collect:</p>
+<ul>
+<li>A verified local census and segment definition.</li>
+<li>A dated competitor feature, availability and total-cost review.</li>
+<li>Customer, owner and staff interviews with methods and sample descriptions.</li>
+<li>Accepted scope and actual visual evidence.</li>
+<li>Actual operating and acquisition costs.</li>
+<li>Pilot denominators, uncertainty and negative outcomes.</li>
+<li>Standard-price payment and renewal.</li>
+<li>Real team information and an operating budget.</li>
+</ul>
+<p>Signed agreements support partnership claims. Actual payments support revenue and retention claims.</p>
+<h2 id="16-references">16. References</h2>
+<ol type="1">
+<li><p>Graham, G. (2013). White Papers for Dummies. John Wiley &amp; Sons. Writing guidance, not certification.</p></li>
+<li><p>Hilken, T., de Ruyter, K., Chylinski, M., Mahr, D., &amp; Keeling, D. I. (2017). Augmenting the eye of the beholder: Exploring the strategic potential of augmented reality to enhance online service experiences. Journal of the Academy of Marketing Science, 45, 884–905. <a href="https://doi.org/10.1007/s11747-017-0541-x">https://doi.org/10.1007/s11747-017-0541-x</a></p></li>
+<li><p>Javornik, A. (2016). ‘It’s an illusion, but it looks real!’ Consumer affective, cognitive and behavioural responses to augmented reality applications. Journal of Marketing Management, 32(9–10), 987–1011. <a href="https://doi.org/10.1080/0267257X.2016.1174726">https://doi.org/10.1080/0267257X.2016.1174726</a></p></li>
+<li><p>Poushneh, A., &amp; Vasquez-Parraga, A. Z. (2017). Discernible impact of augmented reality on retail customer's experience, satisfaction and willingness to buy. Journal of Retailing and Consumer Services, 34, 229–234. <a href="https://doi.org/10.1016/j.jretconser.2016.10.005">https://doi.org/10.1016/j.jretconser.2016.10.005</a></p></li>
+<li><p>Tan, Y.-C., Chandukala, S. R., &amp; Reddy, S. K. (2022). Augmented reality in retail and its impact on sales. Journal of Marketing, 86(1), 48–66. <a href="https://doi.org/10.1177/0022242921995449">https://doi.org/10.1177/0022242921995449</a></p></li>
+</ol>
+<h3 id="company-references-for-follow-up-verification">Company references for follow-up verification</h3>
+<ul>
+<li>Fresha: <a href="https://www.fresha.com/">https://www.fresha.com/</a></li>
+<li>Zenoti: <a href="https://www.zenoti.com/">https://www.zenoti.com/</a></li>
+<li>Phorest: <a href="https://www.phorest.com/">https://www.phorest.com/</a></li>
+<li>Perfect Corp: <a href="https://www.perfectcorp.com/business">https://www.perfectcorp.com/business</a></li>
+<li>ModiFace: <a href="https://modiface.com/">https://modiface.com/</a></li>
+<li>Urban Company: <a href="https://www.urbancompany.com/">https://www.urbancompany.com/</a></li>
+<li>YesMadam: <a href="https://www.yesmadam.com/">https://www.yesmadam.com/</a></li>
+</ul>
+<p>These are not a current feature/pricing audit or independent validation of Beautiva.</p>
+    <p class="partner-link"><a href="business#contact">Talk to Beautiva about a partnership</a></p>
+  </article>
+</main>
+</body>
+</html>
